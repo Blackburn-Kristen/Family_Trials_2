@@ -5,6 +5,9 @@
  */
 package family_trials_2;
 
+import BYUI.CIT260.Family_Trials_2.model.Player;
+import BYUI.CIT260.Family_Trials_2.model.Vehicle;
+
 /**
  *
  * @author krist
@@ -15,7 +18,20 @@ public class Family_Trials_2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Player playerOne = new Player(); 
+        
+        playerOne.setName("Kristen");
+        playerOne.setHighScore(200.00);
+        
+        String playerOneName = playerOne.getName();
+        double playerOneHighScore = playerOne.getHighScore();
+        
+        System.out.println("Name = " + playerOneName + ", highScore = " 
+                + playerOneHighScore);
+        
+        String VehicleType = Vehicle.SportCar.getVehicleType();
+        String vehicleStats = Vehicle.SportCar.getVehicleStats();
     }
     
 }
