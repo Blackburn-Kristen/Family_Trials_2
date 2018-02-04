@@ -16,11 +16,22 @@ public enum Vehicle {
     Van("Tank", "plus happiness, minus time, minus money");
     private String vehicleType;
     private String vehicleStats;
+    private CarParts carParts;
     
     Vehicle(String vehicleType, String vehicleStats) {
         this.vehicleType = vehicleType;
         this.vehicleStats = vehicleStats;
     }
+
+    public CarParts getCarParts() {
+        return carParts;
+    }
+
+    public void setCarParts(CarParts carParts) {
+        this.carParts = carParts;
+    }
+    
+    
 
     public String getVehicleType() {
         return vehicleType;
