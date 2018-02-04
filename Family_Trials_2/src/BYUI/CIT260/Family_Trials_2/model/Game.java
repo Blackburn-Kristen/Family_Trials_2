@@ -16,6 +16,8 @@ public class Game implements Serializable {
     private double palyerLocation;
     private Player player;
     private gameDashBoard gameDashBoard;
+    private Menu menu;
+    private Map map;
 
     public gameDashBoard getGameDashBoard() {
         return gameDashBoard;
@@ -29,6 +31,22 @@ public class Game implements Serializable {
     public Game() {
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     public Player getPlayer() {
         return player;
     }

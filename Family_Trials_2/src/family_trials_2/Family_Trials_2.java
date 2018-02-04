@@ -5,6 +5,10 @@
  */
 package family_trials_2;
 
+import BYUI.CIT260.Family_Trials_2.model.Events;
+import BYUI.CIT260.Family_Trials_2.model.Location;
+import BYUI.CIT260.Family_Trials_2.model.Map;
+import BYUI.CIT260.Family_Trials_2.model.Menu;
 import BYUI.CIT260.Family_Trials_2.model.Player;
 import BYUI.CIT260.Family_Trials_2.model.Vehicle;
 
@@ -30,8 +34,31 @@ public class Family_Trials_2 {
         System.out.println("Name = " + playerOneName + ", highScore = " 
                 + playerOneHighScore);
         
-        String VehicleType = Vehicle.SportCar.getVehicleType();
+        String vehicleType = Vehicle.SportCar.getVehicleType();
         String vehicleStats = Vehicle.SportCar.getVehicleStats();
+        
+        System.out.println("Vehicle Type = " + vehicleType + ",Vehicle Stats = "
+                           + vehicleStats);
+        
+        String eventType = Events.negativeEvent1.getEventType();
+        String eventDescription = Events.negativeEvent1.getEventDescription();
+        
+        System.out.println("Event Type = " + eventType + 
+                ",Event Description = " + eventDescription);
+        
+        Location locationOne = new Location();
+        
+        locationOne.setGmasHouse(5.0);
+        
+        System.out.println("Location = " + locationOne);
+        
+        Map mapDescription = new Map();
+        mapDescription.setDescription("location");
+        
+        String mapDescriptionDescription = mapDescription.getDescription();
+        
+        System.out.println("Map Description = " + mapDescription);
+        
     }
     
 }
