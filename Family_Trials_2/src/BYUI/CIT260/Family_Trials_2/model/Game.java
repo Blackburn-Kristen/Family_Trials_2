@@ -15,6 +15,16 @@ public class Game implements Serializable {
     // class instance variables
     private double palyerLocation;
     private Player player;
+    private gameDashBoard gameDashBoard;
+
+    public gameDashBoard getGameDashBoard() {
+        return gameDashBoard;
+    }
+
+    public void setGameDashBoard(gameDashBoard gameDashBoard) {
+        this.gameDashBoard = gameDashBoard;
+    }
+    
 
     public Game() {
     }
