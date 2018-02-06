@@ -6,6 +6,7 @@
 package BYUI.CIT260.Family_Trials_2.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -19,9 +20,19 @@ public class Menu implements Serializable {
     private String gameMenu;
     private String helpMenu;
     private String itemsMenu;
+    private ArrayList<Game> games = new ArrayList<Game>();
 
     public Menu() {
     }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+    
     
 
     public String getMainMenu() {

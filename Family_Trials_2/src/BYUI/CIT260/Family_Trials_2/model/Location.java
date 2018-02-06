@@ -6,6 +6,7 @@
 package BYUI.CIT260.Family_Trials_2.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +20,19 @@ public class Location implements Serializable {
     private double pitStop;
     private double restaurant;
     private double gasStation;
+    private ArrayList<Map> maps = new ArrayList<Map>();
 
     public Location() {
     }
-    
+
+    public ArrayList<Map> getMaps() {
+        return maps;
+    }
+
+    public void setMaps(ArrayList<Map> maps) {
+        this.maps = maps;
+    }
+
     
 
     public double getGmasHouse() {

@@ -17,17 +17,17 @@ public class Player implements Serializable {
     
     private String name;
     private double highScore;
-    private ArrayList<Game> game = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<Game>();
     
     public Player() {
     }
 
     public ArrayList<Game> getGame() {
-        return game;
+        return games;
     }
 
     public void setGame(ArrayList<Game> game) {
-        this.game = game;
+        this.games = game;
     }
     
     

@@ -18,6 +18,7 @@ public class Game implements Serializable {
     private gameDashBoard gameDashBoard;
     private Menu menu;
     private Map map;
+    private StatusPercent statusPercent;
 
     public gameDashBoard getGameDashBoard() {
         return gameDashBoard;
@@ -30,6 +31,15 @@ public class Game implements Serializable {
 
     public Game() {
     }
+
+    public StatusPercent getStatusPercent() {
+        return statusPercent;
+    }
+
+    public void setStatusPercent(StatusPercent statusPercent) {
+        this.statusPercent = statusPercent;
+    }
+    
 
     public Menu getMenu() {
         return menu;
