@@ -5,7 +5,7 @@
  */
 package family_trials_2;
 
-import BYUI.CIT260.Family_Trials_2.model.Events;
+import BYUI.CIT260.Family_Trials_2.model.RandomEvents;
 import BYUI.CIT260.Family_Trials_2.model.Location;
 import BYUI.CIT260.Family_Trials_2.model.Map;
 import BYUI.CIT260.Family_Trials_2.model.Menu;
@@ -40,8 +40,8 @@ public class Family_Trials_2 {
         System.out.println("Vehicle Type = " + vehicleType + ",Vehicle Stats = "
                            + vehicleStats);
         
-        String eventType = Events.negativeEvent1.getEventType();
-        String eventDescription = Events.negativeEvent1.getEventDescription();
+        String eventType = RandomEvents.negativeEvent1.getEventType();
+        String eventDescription = RandomEvents.negativeEvent1.getEventDescription();
         
         System.out.println("Event Type = " + eventType + 
                 ",Event Description = " + eventDescription);

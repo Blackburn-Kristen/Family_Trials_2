@@ -20,10 +20,21 @@ public class Location implements Serializable {
     private double pitStop;
     private double restaurant;
     private double gasStation;
+    private LocationEvents locationEvents;
     private ArrayList<Map> maps = new ArrayList<Map>();
 
     public Location() {
     }
+
+    public LocationEvents getLocationEvents() {
+        return locationEvents;
+    }
+
+    public void setLocationEvents(LocationEvents locationEvents) {
+        this.locationEvents = locationEvents;
+    }
+    
+    
 
     public ArrayList<Map> getMaps() {
         return maps;

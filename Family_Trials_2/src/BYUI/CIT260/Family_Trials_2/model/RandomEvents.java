@@ -9,7 +9,7 @@ package BYUI.CIT260.Family_Trials_2.model;
  *
  * @author krist
  */
-public enum Events {
+public enum RandomEvents {
     
     positiveEvent1("free food", "plus happiness"),
     positiveEvent2("family game", "plus happiness"),
@@ -24,7 +24,7 @@ public enum Events {
     private String eventType;
     private String eventDescription;
     
-    Events(String eventType, String eventDescription){
+    RandomEvents(String eventType, String eventDescription){
         this.eventType = eventType;
         this.eventDescription = eventDescription;
 }
