@@ -14,6 +14,7 @@ public class Game implements Serializable {
     
     // class instance variables
     private double palyerLocation;
+    private double playerSpeed;
     private Player player;
     private gameDashBoard gameDashBoard;
     private Menu menu;
