@@ -19,7 +19,7 @@ public class gameDashBoard implements Serializable {
     private String Inventory;
     private Game game; 
     private Inventory inventory;
-
+    
     
     
     public Game getGame() {
