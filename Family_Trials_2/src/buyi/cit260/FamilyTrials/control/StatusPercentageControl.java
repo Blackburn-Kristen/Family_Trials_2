@@ -20,19 +20,19 @@ public class StatusPercentageControl {
     
     public float calcHappiness(double inventory, double randomEvents, float locationEvents, float vehicle, double statusPercent){
     
-        if (inventory < 0 || inventory > 30){
+        if (inventory < -25 || inventory > 25){
             return -1;
         }         
         
-        if (randomEvents < 0 || randomEvents > 30){
+        if (randomEvents < -30 || randomEvents > 30){
             return -1;
         }
         
-        if (locationEvents < 1.0 || locationEvents > 1.3){
+        if (locationEvents < -1.3 || locationEvents > 1.3){
             return -1;
         }
         
-        if (vehicle < 1.0 || vehicle > 1.3){
+        if (vehicle < -1.3 || vehicle > 1.3){
             return -1;
         }
         
