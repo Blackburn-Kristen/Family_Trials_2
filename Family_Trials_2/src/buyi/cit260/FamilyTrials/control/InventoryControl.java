@@ -10,5 +10,15 @@ package buyi.cit260.FamilyTrials.control;
  * @author Katrina
  */
 public class InventoryControl {
+    private float currentMoney;
     
+    public float calcMoney(double inventory, double randomEvents, double locationEvents, double vehicle, double statusPercent){
+    
+         currentMoney = (float) (statusPercent - (vehicle + locationEvents + randomEvents + inventory));
+        
+         if ( currentMoney <= 0 ){
+            return 0;
+        }
+         return currentMoney;
+    }
 }
