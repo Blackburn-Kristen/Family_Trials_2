@@ -17,6 +17,13 @@ import BYUI.CIT260.Family_Trials_2.model.Vehicle;
  */
 public class StatusPercentageControl {
     private float happiness;
+    private float carHealth;
+    private float spareTireEffect;
+    private float coolantEffect;
+    private float oilEffect;
+    private double locationEventEffect;
+    private float carSpeedEffect;
+    private float locationEffect;
     
     public float calcHappiness(double inventory, double randomEvents, float locationEvents, float vehicle, double statusPercent){
     
@@ -56,4 +63,70 @@ public class StatusPercentageControl {
         
     }
     
+    public float calcCarHealth(float spareTire, float coolant, float oil, float randomEvents, float locationStart, float locationCurrent, float locationEvents, float carSpeed, float statusPercentage){
+        
+        if (spareTire != 0 && spareTire != 1){
+            return -1;
+        }
+        
+        if (coolant < 0 || coolant > 2){
+            return -1;
+        }
+        
+        if (oil < 0 || oil > 2){
+            return -1;
+        }
+        
+        if (randomEvents < 0 || randomEvents > 30){
+            return -1;
+        }
+        
+        if (locationEvents < 1 || locationEvents > 100){
+            return -1;
+        }
+        
+        if (statusPercentage < 0 || statusPercentage > 100){
+            return -1;
+        }
+        
+        if (carSpeed != 65 && carSpeed != 75 && carSpeed != 90){
+            return -1;
+        }
+        
+        if (locationStart < 1 || locationStart > 2920){
+            return -1;
+        }
+        
+        if (locationCurrent < 0 || locationCurrent > 2920){
+            return -1;
+        }
+        
+        if (carSpeed == 65){
+            carSpeedEffect = 0;
+        }
+        
+        if (carSpeed == 75){
+            carSpeedEffect = 10;
+        }
+        
+        if (carSpeed == 90){
+            carSpeedEffect = 20;
+        }
+        
+        spareTireEffect = spareTire * 10;
+        locationEventEffect = locationEvents * 0.5; 
+        coolantEffect = coolant * 10;
+        oilEffect = oil * 10;
+        locationEffect = ((locationStart - locationCurrent) /10);
+        carHealth = (float) (statusPercentage + spareTireEffect + coolantEffect + oilEffect - randomEvents - locationEventEffect -carSpeedEffect - locationEffect);
+        
+        if (carHealth > 100){
+            carHealth = 100;
+        }
+        
+        if (carHealth < 0){
+            carHealth = 0;
+        }
+         return carHealth;
+    }
 }
