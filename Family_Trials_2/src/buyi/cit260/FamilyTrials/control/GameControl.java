@@ -5,10 +5,25 @@
  */
 package buyi.cit260.FamilyTrials.control;
 
+import BYUI.CIT260.Family_Trials_2.model.Player;
+
 /**
  *
  * @author Katrina
  */
 public class GameControl {
+    
+    public static Player createNewPlayer(String name) {
+            
+        if(name == null || name.length() < 1 ){
+            return null;
+        }
+        
+        Player player = new Player();
+        
+        
+        
+                return player;
+    }
     
 }

@@ -6,6 +6,7 @@
 package family_trials_2;
 
 import BYUI.CIT260.FamilyTrial2.View.StartProgramView;
+import buyi.cit260.FamilyTrials.control.GameControl;
 
 
 /**
@@ -20,8 +21,11 @@ public class Family_Trials_2 {
     public static void main(String[] args) {
         
       StartProgramView startProgramView = new StartProgramView();
-      startProgramView.display();
-        }
+      startProgramView.displayStartProgramView();
+      }
+    
+   GameControl gameControl = new createNewPlayer();
+    
     }
     
 
