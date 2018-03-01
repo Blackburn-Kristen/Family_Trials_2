@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package BYUI.CIT260.FamilyTrial2.View;
+import BYUI.CIT260.Family_Trials_2.model.Player;
+import buyi.cit260.FamilyTrials.control.GameControl;
+import java.util.Scanner;
 
 /**
  *
@@ -25,7 +28,7 @@ public class StartProgramView {
     WHILE endOfView != true
 }
 **/
-    private void displayStartProgramView(){
+    public void displayStartProgramView(){
         
         boolean endOfView = false;
         do{
@@ -65,17 +68,26 @@ RETURN inputs
 **/
 
     private String[] getInputs(){
-
-        System.out.println("*** getInputs() called***");
         
         String[] inputs = new String[1];
-        inputs[0] = "testInput";
+        
+        System.out.println("Welcome to Family Trials: A Road Trip Adventure");
 
         boolean valid = false;
         
         while(valid == false){
-        System.out.println; 
+        System.out.println("Please Enter your player name"); 
         
+        Scanner name;
+        name = new Scanner(System.in);
+        
+        if(name.length() < 1 ){
+            System.out.println("You must enter a non-blank value");
+            continue;
+        }
+        inputs = name.trim();
+        
+        valid = true;
         }
 
         return inputs;
@@ -83,8 +95,21 @@ RETURN inputs
     }
     
     private boolean doAction(String[] inputs) {
-        System.out.println("**** doAcrtion() called ***");
-        System.out.println("\tinputs = " + inputs[0]);
+        String[] playerName = inputs;
+        Player player = GameControl.createNewPlayer(playerName);
+        
+        if(player == null){
+            System.out.println("could not create the player. ");
+            System.out.println("Enter a different name.");
+            return false;
+        }
+        System.out.println("===================================================");
+        System.out.println("Welcome to the game" + playerName);
+        System.out.println("We hope youhave a lot of fun!");
+        System.out.println("===================================================");
+        
+        mainMenuView = new MainMenuView;
+        mainMenuView.displayMainMenuView();
         
         return true;
         }

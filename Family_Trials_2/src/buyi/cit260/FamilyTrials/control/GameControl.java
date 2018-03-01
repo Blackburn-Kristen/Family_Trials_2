@@ -5,6 +5,8 @@
  */
 package buyi.cit260.FamilyTrials.control;
 
+import BYUI.CIT260.Family_Trials_2.model.Player;
+
 /**
  *
  * @author Katrina

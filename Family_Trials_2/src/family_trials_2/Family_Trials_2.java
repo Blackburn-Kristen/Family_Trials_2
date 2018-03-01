@@ -20,7 +20,7 @@ public class Family_Trials_2 {
     public static void main(String[] args) {
         
       StartProgramView startProgramView = new StartProgramView();
-      startProgramView.display();
+      startProgramView.displayStartProgramView();
         }
     }
     
