@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit260.FamilyTrials.control;
+package buyi.cit260.FamilyTrials2.control;
 
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import BYUI.CIT260.Family_Trials_2.model.LocationEvents;

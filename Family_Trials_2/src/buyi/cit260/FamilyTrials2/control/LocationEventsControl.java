@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit260.FamilyTrials.control;
-
-import BYUI.CIT260.Family_Trials_2.model.Player;
+package buyi.cit260.FamilyTrials2.control;
 
 /**
  *
  * @author Katrina
  */
-public class GameControl {
+public class LocationEventsControl {
     
 }

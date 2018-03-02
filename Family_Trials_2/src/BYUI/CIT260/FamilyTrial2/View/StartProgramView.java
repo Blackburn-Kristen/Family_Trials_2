@@ -5,7 +5,8 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 import BYUI.CIT260.Family_Trials_2.model.Player;
-import buyi.cit260.FamilyTrials.control.GameControl;
+import buyi.cit260.FamilyTrials2.control.GameControl;
+
 import java.util.Scanner;
 
 /**
@@ -51,7 +52,7 @@ public class StartProgramView {
  Display a description of the view
 
 valid = false
-WHILE valid == false (no input value has been enterd)
+WHILE valid == false (no input value has been entered)
 
 Display the prompt message
 Get the value entered from the keyboard
@@ -68,50 +69,56 @@ RETURN inputs
 **/
 
     private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-        
-        System.out.println("Welcome to Family Trials: A Road Trip Adventure");
 
-        boolean valid = false;
+      String[] inputs = new String[1];
+      
+      System.out.println("Welcome to Family Trials: A Road Trip Adventure");
         
-        while(valid == false){
-        System.out.println("Please Enter your player name"); 
+          System.out.println("Please Enter Username");
+          
+      
+      boolean valid = false;
+      
+      while( valid == false ){
+          
+          Scanner inFile;
+          inFile = new Scanner(System.in);
+          
+          String name = inFile.nextLine();
+          
+          if(name.length() < 1 ){
+              System.out.println("You must enter a non-blank value");
+              continue;
+          }
+          
+          inputs[0] = name.trim();
+          
+          valid = true;
+          }
+          return inputs;
+      }
         
-        Scanner name;
-        name = new Scanner(System.in);
-        
-        if(name.length() < 1 ){
-            System.out.println("You must enter a non-blank value");
-            continue;
-        }
-        inputs = name.trim();
-        
-        valid = true;
-        }
-
-        return inputs;
-        
-    }
+  
     
-    private boolean doAction(String[] inputs) {
+    private boolean doAction(String[] inputs){
+           
         String[] playerName = inputs;
         Player player = GameControl.createNewPlayer(playerName);
         
-        if(player == null){
-            System.out.println("could not create the player. ");
-            System.out.println("Enter a different name.");
+        if( player == null ){
+            System.out.println("could not create the player.");
+            System.out.println("Enter a different name");
             return false;
         }
-        System.out.println("===================================================");
-        System.out.println("Welcome to the game" + playerName);
-        System.out.println("We hope youhave a lot of fun!");
-        System.out.println("===================================================");
         
-        mainMenuView = new MainMenuView;
+        System.out.println("==================================================");
+        System.out.println("Welcom to the game" + playerName);
+        System.out.println("We hope you have a lot of fun!");
+        System.out.println("==================================================");
+        
+        MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
         
         return true;
         }
 }
-

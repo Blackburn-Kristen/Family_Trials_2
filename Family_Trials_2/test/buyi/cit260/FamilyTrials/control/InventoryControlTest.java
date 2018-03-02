@@ -5,6 +5,7 @@
  */
 package buyi.cit260.FamilyTrials.control;
 
+import buyi.cit260.FamilyTrials2.control.InventoryControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

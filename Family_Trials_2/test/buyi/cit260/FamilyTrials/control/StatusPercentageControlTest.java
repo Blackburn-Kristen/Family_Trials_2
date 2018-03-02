@@ -5,6 +5,7 @@
  */
 package buyi.cit260.FamilyTrials.control;
 
+import buyi.cit260.FamilyTrials2.control.StatusPercentageControl;
 import static java.sql.JDBCType.NULL;
 import org.junit.Test;
 import static org.junit.Assert.*;

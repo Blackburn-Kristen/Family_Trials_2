@@ -81,6 +81,10 @@ public class Player implements Serializable {
     public String toString() {
         return "Player{" + "name=" + name + ", highScore=" + highScore + '}';
     }
+
+    public Player getname() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

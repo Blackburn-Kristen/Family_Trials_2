@@ -6,6 +6,8 @@
 package family_trials_2;
 
 import BYUI.CIT260.FamilyTrial2.View.StartProgramView;
+import BYUI.CIT260.Family_Trials_2.model.Game;
+import BYUI.CIT260.Family_Trials_2.model.Player;
 
 
 /**
@@ -13,15 +15,38 @@ import BYUI.CIT260.FamilyTrial2.View.StartProgramView;
  * @author krist
  */
 public class Family_Trials_2 {
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Family_Trials_2.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Family_Trials_2.player = player;
+    }
+    
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Family_Trials_2.setPlayer(player);
       StartProgramView startProgramView = new StartProgramView();
       startProgramView.displayStartProgramView();
-        }
+      }
+    
+    
     }
     
 
