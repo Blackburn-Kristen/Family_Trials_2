@@ -23,8 +23,8 @@ public class MainMenuView {
         do{
            String[] inputs = getInputs();
            
-           if(inputs[0] == null || inputs[0] == "Q"){
-               return;
+           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
+               continue;
            }
                
            endOfView = doAction(inputs);
@@ -39,7 +39,7 @@ public class MainMenuView {
       
       System.out.println("Main Menu\n" + "\tN - Start new game\n" + 
                          "\tR - Restart exisiting game\n" + "\tH - Get help"
-              + "on how to play the game\n" + "\tE - Exit");
+              + " on how to play the game\n" + "\tE - Exit");
         
           System.out.println("Please Select a menu option");
           

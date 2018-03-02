@@ -23,8 +23,8 @@ class HelpMenuView {
         do{
            String[] inputs = getInputs();
            
-           if(inputs[0] == null || inputs[0] == "Q"){
-               return;
+           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
+               continue;
            }
                
            endOfView = doAction(inputs);
