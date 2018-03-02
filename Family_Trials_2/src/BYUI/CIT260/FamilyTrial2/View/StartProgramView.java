@@ -6,6 +6,7 @@
 package BYUI.CIT260.FamilyTrial2.View;
 import BYUI.CIT260.Family_Trials_2.model.Player;
 import buyi.cit260.FamilyTrials2.control.GameControl;
+import java.util.Arrays;
 
 import java.util.Scanner;
 
@@ -112,7 +113,7 @@ RETURN inputs
         }
         
         System.out.println("==================================================");
-        System.out.println("Welcom to the game" + playerName);
+        System.out.println("Welcom to the game" + Arrays.toString(playerName));
         System.out.println("We hope you have a lot of fun!");
         System.out.println("==================================================");
         

@@ -68,9 +68,9 @@ public class MainMenuView {
         private boolean doAction(String[] inputs){
            
         String[] menuItem = inputs;
-        menuItem[1].toUpperCase();
+        String item = menuItem[0].toUpperCase();
         
-        switch(menuItem){
+        switch(item.charAt(0)){
             case 'N':
                 startNewGame();
                 break;
@@ -107,7 +107,7 @@ public class MainMenuView {
 
     private void getHelp() {
       
-        HelpMenuView helpMenuView = HelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView(); 
         
         }

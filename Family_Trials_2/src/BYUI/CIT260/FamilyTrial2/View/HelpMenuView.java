@@ -68,9 +68,9 @@ class HelpMenuView {
      private boolean doAction(String[] inputs){
            
         String[] menuItem = inputs;
-        menuItem[1].toUpperCase();
+        String item = menuItem[0].toUpperCase();
         
-        switch(menuItem){
+        switch(item.charAt(0)){
             case 'G':
                 goalOfGame();
                 break;

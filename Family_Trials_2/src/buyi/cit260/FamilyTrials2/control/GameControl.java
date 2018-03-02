@@ -16,7 +16,7 @@ public class GameControl {
 
     public static Player createNewPlayer(String[] playerName) {
         
-        if(playerName == null || playerName[1].length() < 1 ){
+        if(playerName == null || playerName[0].length() < 1 ){
             return null;
         } 
         
