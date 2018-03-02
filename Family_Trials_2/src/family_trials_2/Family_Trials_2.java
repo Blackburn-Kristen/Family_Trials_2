@@ -19,6 +19,15 @@ public class Family_Trials_2 {
     private static Game currentGame = null;
     private static Player player = null;
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Family_Trials_2.setPlayer(player);
+      StartProgramView startProgramView = new StartProgramView();
+      startProgramView.displayStartProgramView();
+      }
+
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -36,17 +45,6 @@ public class Family_Trials_2 {
     }
     
     
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Family_Trials_2.setPlayer(player);
-      StartProgramView startProgramView = new StartProgramView();
-      startProgramView.displayStartProgramView();
-      }
-    
-    
-    }
+}
     
 

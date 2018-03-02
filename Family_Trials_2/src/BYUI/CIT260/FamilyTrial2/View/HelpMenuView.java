@@ -5,21 +5,21 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 
-import buyi.cit260.FamilyTrials2.control.GameControl;
-import family_trials_2.Family_Trials_2;
 import java.util.Scanner;
 
 /**
  *
- * @author krist
+ * @author Katrina
  */
-public class MainMenuView {
+class HelpMenuView {
 
-    public MainMenuView() {
+    public HelpMenuView(){
+        
     }
     
-    public void displayMainMenuView(){
-         boolean endOfView = false;
+    void displayHelpMenuView() {
+         
+        boolean endOfView = false;
         do{
            String[] inputs = getInputs();
            
@@ -32,14 +32,14 @@ public class MainMenuView {
            while(endOfView != true);
         
     }
-    
+        
     private String[] getInputs(){
         
         String[] inputs = new String[1];
       
-      System.out.println("Main Menu\n" + "\tN - Start new game\n" + 
-                         "\tR - Restart exisiting game\n" + "\tH - Get help"
-              + "on how to play the game\n" + "\tE - Exit");
+      System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
+                         "\tM - How to move.\n" + "\tE - Estitmate Status Bar \n"
+              + "\tS - Supplies \n" + "\tQ - Quit");
         
           System.out.println("Please Select a menu option");
           
@@ -64,23 +64,27 @@ public class MainMenuView {
           }
           return inputs;
     }
-          
-        private boolean doAction(String[] inputs){
+    
+     private boolean doAction(String[] inputs){
            
         String[] menuItem = inputs;
         menuItem[1].toUpperCase();
         
         switch(menuItem){
-            case 'N':
-                startNewGame();
+            case 'G':
+                goalOfGame();
                 break;
-            case 'R':
-                restartGame();
-                break;
-            case 'H':
-                getHelp();
+            case 'M':
+                howToMove();
                 break;
             case 'E':
+                estimateStatus();
+                break;
+            case 'S':
+                supplyShop();
+                break;
+            case 'Q':
+                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -88,28 +92,25 @@ public class MainMenuView {
         }
         return false;
           }
-        
-        private void startNewGame(){
-       
-            GameControl.createNewGame(Family_Trials_2.getPlayer());
-            
-        GameMenuView gameMenuView = new GameMenuView();
-            gameMenuView.displayGameMenuView();
-        }
 
-    private void restartGame() {
-        
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
-        
-     
+    private void goalOfGame() {
+        System.out.println("goalOfGame() Called");
     }
 
-    private void getHelp() {
-      
-        HelpMenuView helpMenuView = HelpMenuView();
-        helpMenuView.displayHelpMenuView(); 
-        
-        }
+    private void howToMove() {
+        System.out.println("howToMove() Called");
     }
 
+    private void estimateStatus() {
+        System.out.println("estimateStatus() Called");
+    }
+
+    private void supplyShop() {
+        System.out.println("supplyShop() Called");
+    }
+
+    private void quit() {
+        System.out.println("quit() Called");
+    }
+    
+}
