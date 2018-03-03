@@ -80,6 +80,7 @@ public class StatusBarView {
                 showTime();
                 break;
             case 'Q':
+                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -98,6 +99,11 @@ public class StatusBarView {
 
     private void showTime() {
         System.out.println("showTime() called");
+    }
+
+    private void quit() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
     }
 
 }

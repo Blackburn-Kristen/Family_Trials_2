@@ -84,6 +84,7 @@ class HelpMenuView {
                 supplyShop();
                 break;
             case 'Q':
+                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -108,6 +109,11 @@ class HelpMenuView {
     private void supplyShop() {
         SupplyShopView supplyShopView = new SupplyShopView();
         supplyShopView.displaySupplyShopView();
+    }
+
+    private void quit() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
     }
 
 }

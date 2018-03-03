@@ -77,6 +77,7 @@ public class SupplyShopView {
                 carPartOptions();
                 break;
             case 'Q':
+                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -93,6 +94,11 @@ public class SupplyShopView {
     private void carPartOptions() {
        CarPartsMenuView carPartsMenuView = new CarPartsMenuView();
         carPartsMenuView.displayCarPartsMenuView();
+    }
+
+    private void quit() {
+         MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
     }
 
 
