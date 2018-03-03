@@ -9,17 +9,17 @@ import java.util.Scanner;
 
 /**
  *
- * @author Katrina
+ * @author krist
  */
-class HelpMenuView {
-
-    public HelpMenuView(){
-        
-    }
+public class SupplyShopView {
     
-    void displayHelpMenuView() {
-         
-        boolean endOfView = false;
+    public SupplyShopView(){
+       
+    }
+
+    void displaySupplyShopView() {
+        
+         boolean endOfView = false;
         do{
            String[] inputs = getInputs();
            
@@ -32,14 +32,13 @@ class HelpMenuView {
            while(endOfView != true);
         
     }
-        
+    
     private String[] getInputs(){
         
         String[] inputs = new String[1];
       
-      System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
-                         "\tM - How to move.\n" + "\tE - Estitmate Status Bar \n"
-              + "\tS - Supplies \n" + "\tQ - Quit");
+      System.out.println("Supply Shop\n" + "\tS - See Snack Options\n" + 
+                         "\tC - See Car Part Options\n" + "\tQ - Return to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -71,17 +70,11 @@ class HelpMenuView {
         String item = menuItem[0].toUpperCase();
         
         switch(item.charAt(0)){
-            case 'G':
-                goalOfGame();
-                break;
-            case 'M':
-                howToMove();
-                break;
-            case 'E':
-                estimateStatus();
-                break;
             case 'S':
-                supplyShop();
+                snackOptions();
+                break;
+            case 'C':
+                carPartOptions();
                 break;
             case 'Q':
                 quit();
@@ -93,25 +86,18 @@ class HelpMenuView {
         return false;
           }
 
-    private void goalOfGame() {
-        System.out.println("goalOfGame() Called");
+    private void snackOptions() {
+       SnackSupplyMenuView snackSupplyMenuView = new SnackSupplyMenuView();
+        snackSupplyMenuView.displaySnackSupplyMenuView();
     }
 
-    private void howToMove() {
-        System.out.println("howToMove() Called");
-    }
-
-    private void estimateStatus() {
-        System.out.println("estimateStatus() Called");
-    }
-
-    private void supplyShop() {
-        SupplyShopView supplyShopView = new SupplyShopView();
-        supplyShopView.displaySupplyShopView();
+    private void carPartOptions() {
+       CarPartsMenuView carPartsMenuView = new CarPartsMenuView();
+        carPartsMenuView.displayCarPartsMenuView();
     }
 
     private void quit() {
-        System.out.println("Exiting Help Menu");
+        System.out.println("Exiting Supply Shop");
     }
-    
+
 }

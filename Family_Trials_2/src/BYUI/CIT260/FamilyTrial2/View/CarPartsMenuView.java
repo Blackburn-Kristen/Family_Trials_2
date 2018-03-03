@@ -9,17 +9,17 @@ import java.util.Scanner;
 
 /**
  *
- * @author Katrina
+ * @author krist
  */
-class HelpMenuView {
-
-    public HelpMenuView(){
+public class CarPartsMenuView {
+    
+    public CarPartsMenuView(){
         
     }
-    
-    void displayHelpMenuView() {
-         
-        boolean endOfView = false;
+
+    void displayCarPartsMenuView() {
+       
+         boolean endOfView = false;
         do{
            String[] inputs = getInputs();
            
@@ -32,14 +32,13 @@ class HelpMenuView {
            while(endOfView != true);
         
     }
-        
+    
     private String[] getInputs(){
         
         String[] inputs = new String[1];
       
-      System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
-                         "\tM - How to move.\n" + "\tE - Estitmate Status Bar \n"
-              + "\tS - Supplies \n" + "\tQ - Quit");
+      System.out.println("Car Parts Shop\n" + "\tO - Oil\n" + 
+                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tQ - Return to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -71,17 +70,14 @@ class HelpMenuView {
         String item = menuItem[0].toUpperCase();
         
         switch(item.charAt(0)){
-            case 'G':
-                goalOfGame();
+            case 'O':
+                getOil();
                 break;
-            case 'M':
-                howToMove();
-                break;
-            case 'E':
-                estimateStatus();
+            case 'C':
+                getCoolant();
                 break;
             case 'S':
-                supplyShop();
+                getSpareTire();
                 break;
             case 'Q':
                 quit();
@@ -93,25 +89,19 @@ class HelpMenuView {
         return false;
           }
 
-    private void goalOfGame() {
-        System.out.println("goalOfGame() Called");
+    private void getOil() {
+        System.out.println("getOil() called");
     }
 
-    private void howToMove() {
-        System.out.println("howToMove() Called");
+    private void getCoolant() {
+        System.out.println("getCoolant() called");
     }
 
-    private void estimateStatus() {
-        System.out.println("estimateStatus() Called");
-    }
-
-    private void supplyShop() {
-        SupplyShopView supplyShopView = new SupplyShopView();
-        supplyShopView.displaySupplyShopView();
+    private void getSpareTire() {
+        System.out.println("getSpareTire() called");
     }
 
     private void quit() {
-        System.out.println("Exiting Help Menu");
+        System.out.println("Exiting Car Part Shop");
     }
-    
 }

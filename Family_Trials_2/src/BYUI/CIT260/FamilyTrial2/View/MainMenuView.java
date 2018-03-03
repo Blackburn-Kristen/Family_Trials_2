@@ -94,13 +94,13 @@ public class MainMenuView {
             GameControl.createNewGame(Family_Trials_2.getPlayer());
             
         GameMenuView gameMenuView = new GameMenuView();
-            gameMenuView.displayGameMenuView();
+         gameMenuView.displayGameMenuView();
         }
 
     private void restartGame() {
         
         StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
+         startExistingGameView.displayStartExistingGameView();
         
      
     }
@@ -108,7 +108,7 @@ public class MainMenuView {
     private void getHelp() {
       
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView(); 
+         helpMenuView.displayHelpMenuView(); 
         
         }
     }

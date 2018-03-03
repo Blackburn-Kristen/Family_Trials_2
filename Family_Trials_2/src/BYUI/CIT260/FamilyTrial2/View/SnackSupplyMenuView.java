@@ -11,13 +11,12 @@ import java.util.Scanner;
  *
  * @author Katrina
  */
-public class SnackSupplyMenu {
+public class SnackSupplyMenuView {
     
-    public SnackSupplyMenu(){
-        
+    public SnackSupplyMenuView(){    
     }
     
-    void displaySnackSupplyMenu() {
+    void displaySnackSupplyMenuView() {
          
         boolean endOfView = false;
         do{
