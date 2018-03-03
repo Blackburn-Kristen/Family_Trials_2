@@ -80,7 +80,6 @@ public class CarPartsMenuView {
                 getSpareTire();
                 break;
             case 'Q':
-                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -101,7 +100,4 @@ public class CarPartsMenuView {
         System.out.println("getSpareTire() called");
     }
 
-    private void quit() {
-        System.out.println("Exiting Car Part Shop");
-    }
 }

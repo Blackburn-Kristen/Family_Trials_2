@@ -11,13 +11,13 @@ import java.util.Scanner;
  *
  * @author krist
  */
-public class SupplyShopView {
+public class StatusBarView {
     
-    public SupplyShopView(){
-       
+    public StatusBarView(){
+        
     }
 
-    void displaySupplyShopView() {
+    void displayStatusBarView() {
         
          boolean endOfView = false;
         do{
@@ -37,8 +37,8 @@ public class SupplyShopView {
         
         String[] inputs = new String[1];
       
-      System.out.println("Supply Shop\n" + "\tS - See Snack Options\n" + 
-                         "\tC - See Car Part Options\n" + "\tQ - Return to Main Menu\n");
+      System.out.println("\nStatus Bar\n" + "\tC - Car health\n" + 
+                         "\tH - Happiness\n" + "\tT - Time\n" + "\tQ - Return to Main Menu");
         
           System.out.println("Please Select a menu option");
           
@@ -63,18 +63,21 @@ public class SupplyShopView {
           }
           return inputs;
     }
-    
-     private boolean doAction(String[] inputs){
+          
+        private boolean doAction(String[] inputs){
            
         String[] menuItem = inputs;
         String item = menuItem[0].toUpperCase();
         
         switch(item.charAt(0)){
-            case 'S':
-                snackOptions();
-                break;
             case 'C':
-                carPartOptions();
+                showCarHealth();
+                break;
+            case 'H':
+                showHappiness();
+                break;
+            case 'T':
+                showTime();
                 break;
             case 'Q':
                 return true;
@@ -85,15 +88,16 @@ public class SupplyShopView {
         return false;
           }
 
-    private void snackOptions() {
-       SnackSupplyMenuView snackSupplyMenuView = new SnackSupplyMenuView();
-        snackSupplyMenuView.displaySnackSupplyMenuView();
+    private void showCarHealth() {
+        System.out.println("showCarHealth() called");
     }
 
-    private void carPartOptions() {
-       CarPartsMenuView carPartsMenuView = new CarPartsMenuView();
-        carPartsMenuView.displayCarPartsMenuView();
+    private void showHappiness() {
+        System.out.println("showHappiness() called");
     }
 
+    private void showTime() {
+        System.out.println("showTime() called");
+    }
 
 }

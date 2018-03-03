@@ -38,7 +38,7 @@ class HelpMenuView {
         String[] inputs = new String[1];
       
       System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
-                         "\tM - How to move.\n" + "\tE - Estitmate Status Bar \n"
+                         "\tM - How to move.\n" + "\tB - Show Status Bar \n"
               + "\tS - Supplies \n" + "\tQ - Quit");
         
           System.out.println("Please Select a menu option");
@@ -77,14 +77,13 @@ class HelpMenuView {
             case 'M':
                 howToMove();
                 break;
-            case 'E':
-                estimateStatus();
+            case 'B':
+                showStatusBar();
                 break;
             case 'S':
                 supplyShop();
                 break;
             case 'Q':
-                quit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -101,8 +100,9 @@ class HelpMenuView {
         System.out.println("howToMove() Called");
     }
 
-    private void estimateStatus() {
-        System.out.println("estimateStatus() Called");
+    private void showStatusBar() {
+        StatusBarView statusBarView = new StatusBarView();
+         statusBarView.displayStatusBarView();
     }
 
     private void supplyShop() {
@@ -110,8 +110,4 @@ class HelpMenuView {
         supplyShopView.displaySupplyShopView();
     }
 
-    private void quit() {
-        System.out.println("Exiting Help Menu");
-    }
-    
 }
