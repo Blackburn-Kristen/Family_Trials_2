@@ -38,7 +38,7 @@ public class SupplyShopView {
         String[] inputs = new String[1];
       
       System.out.println("Supply Shop\n" + "\tS - See Snack Options\n" + 
-                         "\tC - See Car Part Options\n" + "\tQ - Return to Main Menu\n");
+                         "\tC - See Car Part Options\n" + "\tE - Exit to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -76,8 +76,8 @@ public class SupplyShopView {
             case 'C':
                 carPartOptions();
                 break;
-            case 'Q':
-                quit();
+            case 'E':
+                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -96,7 +96,7 @@ public class SupplyShopView {
         carPartsMenuView.displayCarPartsMenuView();
     }
 
-    private void quit() {
+    private void exit() {
          MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }

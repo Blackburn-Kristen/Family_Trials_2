@@ -38,7 +38,7 @@ public class StatusBarView {
         String[] inputs = new String[1];
       
       System.out.println("\nStatus Bar\n" + "\tC - Car health\n" + 
-                         "\tH - Happiness\n" + "\tT - Time\n" + "\tQ - Return to Main Menu");
+                         "\tH - Happiness\n" + "\tT - Time\n" + "\tE - Exit to Main Menu");
         
           System.out.println("Please Select a menu option");
           
@@ -79,8 +79,8 @@ public class StatusBarView {
             case 'T':
                 showTime();
                 break;
-            case 'Q':
-                quit();
+            case 'E':
+                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -101,7 +101,7 @@ public class StatusBarView {
         System.out.println("showTime() called");
     }
 
-    private void quit() {
+    private void exit() {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }

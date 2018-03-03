@@ -38,7 +38,7 @@ public class CarPartsMenuView {
         String[] inputs = new String[1];
       
       System.out.println("Car Parts Shop\n" + "\tO - Oil\n" + 
-                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tQ - Return to Main Menu\n");
+                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tE - Exit to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -79,8 +79,8 @@ public class CarPartsMenuView {
             case 'S':
                 getSpareTire();
                 break;
-            case 'Q':
-                quit();
+            case 'E':
+                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -101,7 +101,7 @@ public class CarPartsMenuView {
         System.out.println("getSpareTire() called");
     }
 
-    private void quit() {
+    private void exit() {
          MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
