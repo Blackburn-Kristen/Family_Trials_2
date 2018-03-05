@@ -39,7 +39,7 @@ class HelpMenuView {
       
       System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
                          "\tM - How to move.\n" + "\tB - Show Status Bar \n"
-              + "\tS - Supplies \n" + "\tE - Exit");
+              + "\tS - Supplies \n" + "\tX - Exit to main menu");
         
           System.out.println("Please Select a menu option");
           
@@ -83,7 +83,7 @@ class HelpMenuView {
             case 'S':
                 supplyShop();
                 break;
-            case 'E':
+            case 'X':
                 exit();
                 return true;
             default:

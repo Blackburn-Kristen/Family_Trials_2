@@ -38,7 +38,7 @@ public class StatusBarView {
         String[] inputs = new String[1];
       
       System.out.println("\nStatus Bar\n" + "\tC - Car health\n" + 
-                         "\tH - Happiness\n" + "\tT - Time\n" + "\tE - Exit to Main Menu");
+                         "\tH - Happiness\n" + "\tT - Time\n" + "\tM - Exit to Main Menu");
         
           System.out.println("Please Select a menu option");
           
@@ -79,7 +79,7 @@ public class StatusBarView {
             case 'T':
                 showTime();
                 break;
-            case 'E':
+            case 'M':
                 exit();
                 return true;
             default:

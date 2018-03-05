@@ -38,7 +38,7 @@ public class SnackSupplyMenuView {
          System.out.println("Snack Options\n" + "\tC - Carrot Sticks \n" + 
                          "\tA - Apple Slices\n" + "\tW - Water\n"
               + "\tB - Candy Bar \n" + "\tS - Soda \n" + "\tP - Potato Chips \n" +
-                 "\tQ - Quit");
+                 "\tM - Quit");
         
           System.out.println("Please Select a Snack option");
           
@@ -89,7 +89,7 @@ public class SnackSupplyMenuView {
             case 'P':
                 potatoChips();
                 break;
-            case 'Q':
+            case 'M':
                 quit();
                 return true;
             default:

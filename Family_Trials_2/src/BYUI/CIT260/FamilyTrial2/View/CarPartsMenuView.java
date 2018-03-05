@@ -38,7 +38,7 @@ public class CarPartsMenuView {
         String[] inputs = new String[1];
       
       System.out.println("Car Parts Shop\n" + "\tO - Oil\n" + 
-                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tE - Exit to Main Menu\n");
+                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tM - Exit to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -79,7 +79,7 @@ public class CarPartsMenuView {
             case 'S':
                 getSpareTire();
                 break;
-            case 'E':
+            case 'M':
                 exit();
                 return true;
             default:

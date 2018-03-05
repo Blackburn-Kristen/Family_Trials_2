@@ -38,7 +38,7 @@ public class SupplyShopView {
         String[] inputs = new String[1];
       
       System.out.println("Supply Shop\n" + "\tS - See Snack Options\n" + 
-                         "\tC - See Car Part Options\n" + "\tE - Exit to Main Menu\n");
+                         "\tC - See Car Part Options\n" + "\tM - Exit to Main Menu\n");
         
           System.out.println("Please Select a menu option");
           
@@ -76,7 +76,7 @@ public class SupplyShopView {
             case 'C':
                 carPartOptions();
                 break;
-            case 'E':
+            case 'M':
                 exit();
                 return true;
             default:
