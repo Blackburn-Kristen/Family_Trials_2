@@ -94,7 +94,8 @@ class HelpMenuView {
           }
 
     private void goalOfGame() {
-        System.out.println("goalOfGame() Called");
+        GoalOfGameView goalOfGameView = new GoalOfGameView();
+        goalOfGameView.displayGoalOfGameView();
     }
 
     private void howToMove() {
