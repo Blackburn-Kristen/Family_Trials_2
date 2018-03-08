@@ -13,61 +13,40 @@ import java.util.Scanner;
  *
  * @author krist
  */
-public class MainMenuView {
+public class MainMenuView extends View{
+    
 
     public MainMenuView() {
-    }
-    
-    public void displayMainMenuView(){
-         boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
-           
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
-        
-    }
-    
-    private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-      
-      System.out.println("Main Menu\n" + "\tN - Start new game\n" + 
+        super("Main Menu\n" + "\tN - Start new game\n" + 
                          "\tR - Restart exisiting game\n" + "\tH - Get help"
               + " on how to play the game\n" + "\tE - Exit");
         
-          System.out.println("Please Select a menu option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a menu value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
     }
-          
-        private boolean doAction(String[] inputs){
-           
-        String[] menuItem = inputs;
+        
+        private void startNewGame(){
+       
+            GameControl.createNewGame(Family_Trials_2.getPlayer());
+            
+        GameMenuView gameMenuView = new GameMenuView();
+         gameMenuView.displayGameMenuView();
+        }
+
+    private void restartGame() {
+        
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+         startExistingGameView.displayStartExistingGameView();
+        
+    }
+
+    private void getHelp() {
+      
+        HelpMenuView helpMenuView = new HelpMenuView();
+         helpMenuView.displayHelpMenuView(); 
+        
+        }
+
+    public boolean doAction(String[] inputs) {
+     String[] menuItem = inputs;
         String item = menuItem[0].toUpperCase();
         
         switch(item.charAt(0)){
@@ -87,29 +66,11 @@ public class MainMenuView {
                 return false;
         }
         return false;
-          }
-        
-        private void startNewGame(){
-       
-            GameControl.createNewGame(Family_Trials_2.getPlayer());
-            
-        GameMenuView gameMenuView = new GameMenuView();
-         gameMenuView.displayGameMenuView();
-        }
-
-    private void restartGame() {
-        
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
-         startExistingGameView.displayStartExistingGameView();
-        
-     
     }
 
-    private void getHelp() {
-      
-        HelpMenuView helpMenuView = new HelpMenuView();
-         helpMenuView.displayHelpMenuView(); 
-        
-        }
+    @Override
+    public String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 

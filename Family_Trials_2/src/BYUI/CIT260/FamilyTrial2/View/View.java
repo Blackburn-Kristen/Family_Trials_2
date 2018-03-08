@@ -9,16 +9,22 @@ import java.util.Scanner;
 
 /**
  *
- * @author krist
+ * @author Katrina
  */
-public class StatusBarView {
+public abstract class View implements ViewInterface{
     
-    public StatusBarView(){
-        
+    protected String displayMessage;
+    
+    public View(){
     }
-
-    void displayStatusBarView() {
-        
+    
+    public View(String Message) {
+        String message = null;
+        this.displayMessage = message;
+    }
+    
+    @Override
+    public void display(){
          boolean endOfView = false;
         do{
            String[] inputs = getInputs();
@@ -33,12 +39,9 @@ public class StatusBarView {
         
     }
     
-    private String[] getInputs(){
+     private String[] getInputs(){
         
         String[] inputs = new String[1];
-      
-      System.out.println("\nStatus Bar\n" + "\tC - Car health\n" + 
-                         "\tH - Happiness\n" + "\tT - Time\n" + "\tM - Exit to Main Menu");
         
           System.out.println("Please Select a menu option");
           
@@ -63,47 +66,20 @@ public class StatusBarView {
           }
           return inputs;
     }
-          
+    
         private boolean doAction(String[] inputs){
            
         String[] menuItem = inputs;
         String item = menuItem[0].toUpperCase();
-        
-        switch(item.charAt(0)){
-            case 'C':
-                showCarHealth();
-                break;
-            case 'H':
-                showHappiness();
-                break;
-            case 'T':
-                showTime();
-                break;
-            case 'M':
-                exit();
-                return true;
-            default:
-                System.out.println("Invalid menu item.");
-                return false;
-        }
+      
         return false;
           }
-
-    private void showCarHealth() {
-        System.out.println("showCarHealth() called");
-    }
-
-    private void showHappiness() {
-        System.out.println("showHappiness() called");
-    }
-
-    private void showTime() {
-        System.out.println("showTime() called");
-    }
-
-    private void exit() {
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-    }
-
+     
+     @Override
+     public boolean doAction (String value){
+         
+         value = value.toUpperCase(); //Convert to all upper case
+         
+         return false;
+     }
 }

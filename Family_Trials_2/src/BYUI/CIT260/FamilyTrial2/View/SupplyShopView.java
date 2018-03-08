@@ -98,7 +98,7 @@ public class SupplyShopView {
 
     private void exit() {
          MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 
 

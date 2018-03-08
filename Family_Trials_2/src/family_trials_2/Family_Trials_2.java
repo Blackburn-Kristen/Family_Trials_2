@@ -25,7 +25,7 @@ public class Family_Trials_2 {
     public static void main(String[] args) {
         Family_Trials_2.setPlayer(player);
       StartProgramView startProgramView = new StartProgramView();
-      startProgramView.displayStartProgramView();
+      startProgramView.display();
       }
 
     public static Game getCurrentGame() {

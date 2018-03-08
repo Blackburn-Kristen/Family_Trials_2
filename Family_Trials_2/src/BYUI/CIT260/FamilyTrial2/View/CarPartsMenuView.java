@@ -103,7 +103,7 @@ public class CarPartsMenuView {
 
     private void exit() {
          MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 
 }
