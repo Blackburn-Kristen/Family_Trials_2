@@ -118,7 +118,7 @@ RETURN inputs
         System.out.println("==================================================");
         
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
         
         return true;
         }

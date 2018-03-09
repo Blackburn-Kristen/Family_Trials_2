@@ -13,64 +13,22 @@ import java.util.Scanner;
  *
  * @author krist
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
-    }
-    
-    public void displayMainMenuView(){
-         boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
-           
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
-        
-    }
-    
-    private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-      
-      System.out.println("Main Menu\n" + "\tN - Start new game\n" + 
+        super("Main Menu\n" + "\tN - Start new game\n" + 
                          "\tR - Restart exisiting game\n" + "\tH - Get help"
               + " on how to play the game\n" + "\tE - Exit");
-        
-          System.out.println("Please Select a menu option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a menu value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
     }
-          
-        private boolean doAction(String[] inputs){
+    
+   
+    }
+        @Override 
+        public boolean doAction(String value){
            
-        String[] menuItem = inputs;
-        String item = menuItem[0].toUpperCase();
+        value = value.toUpperCase();
         
-        switch(item.charAt(0)){
+        switch(value){
             case 'N':
                 startNewGame();
                 break;
