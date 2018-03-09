@@ -45,7 +45,7 @@ public abstract class View implements ViewInterface {
         String value = null;
       
         while(!valid){
-      System.out.println("\nEnter your selection below:");
+      System.out.println("\n" + this.displayMessage);
       
       value = keyboard.nextLine();
       value = value.trim();

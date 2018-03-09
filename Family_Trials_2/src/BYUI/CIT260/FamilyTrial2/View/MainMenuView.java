@@ -18,7 +18,7 @@ public class MainMenuView extends View {
     public MainMenuView() {
         super("Main Menu\n" + "\tN - Start new game\n" + 
                          "\tR - Restart exisiting game\n" + "\tH - Get help"
-              + " on how to play the game\n" + "\tE - Exit");
+              + " on how to play the game\n" + "\tE - Exit\n" + "Please select a menu option");
 
     }
         @Override 
