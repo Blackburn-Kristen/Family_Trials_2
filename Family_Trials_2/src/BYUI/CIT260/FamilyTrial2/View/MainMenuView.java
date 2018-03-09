@@ -19,16 +19,14 @@ public class MainMenuView extends View {
         super("Main Menu\n" + "\tN - Start new game\n" + 
                          "\tR - Restart exisiting game\n" + "\tH - Get help"
               + " on how to play the game\n" + "\tE - Exit");
-    }
-    
-   
+
     }
         @Override 
         public boolean doAction(String value){
            
         value = value.toUpperCase();
         
-        switch(value){
+        switch(value.charAt(0)){
             case 'N':
                 startNewGame();
                 break;
@@ -45,7 +43,8 @@ public class MainMenuView extends View {
                 return false;
         }
         return false;
-          }
+    }
+
         
         private void startNewGame(){
        
@@ -60,7 +59,6 @@ public class MainMenuView extends View {
         StartExistingGameView startExistingGameView = new StartExistingGameView();
          startExistingGameView.displayStartExistingGameView();
         
-     
     }
 
     private void getHelp() {
@@ -69,5 +67,4 @@ public class MainMenuView extends View {
          helpMenuView.displayHelpMenuView(); 
         
         }
-    }
-
+}

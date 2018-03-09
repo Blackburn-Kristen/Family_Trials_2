@@ -7,7 +7,7 @@ package BYUI.CIT260.FamilyTrial2.View;
 
 /**
  *
- * @author krist
+ * @author Katrina
  */
 public interface ViewInterface {
     
