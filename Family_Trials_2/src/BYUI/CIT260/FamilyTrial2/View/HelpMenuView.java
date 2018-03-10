@@ -11,66 +11,19 @@ import java.util.Scanner;
  *
  * @author Katrina
  */
-class HelpMenuView {
+class HelpMenuView extends View{
 
     public HelpMenuView(){
-        
-    }
-    
-    void displayHelpMenuView() {
-         
-        boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
-           
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
-        
-    }
-        
-    private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-      
-      System.out.println("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
+        super("Getting Help\n" + "\tG - What is the goal of the game? \n" + 
                          "\tM - How to move.\n" + "\tB - Show Status Bar \n"
-              + "\tS - Supplies \n" + "\tX - Exit to main menu");
-        
-          System.out.println("Please Select a menu option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a menu value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
+              + "\tS - Supplies \n" + "\tX - Exit to main menu" + "Please Selecy a menu option");
     }
-    
-     private boolean doAction(String[] inputs){
+    @Override
+     public boolean doAction(String value){
            
-        String[] menuItem = inputs;
-        String item = menuItem[0].toUpperCase();
+        value = value.toUpperCase();
         
-        switch(item.charAt(0)){
+        switch(value.charAt(0)){
             case 'G':
                 goalOfGame();
                 break;
@@ -84,7 +37,6 @@ class HelpMenuView {
                 supplyShop();
                 break;
             case 'X':
-                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -104,17 +56,13 @@ class HelpMenuView {
 
     private void showStatusBar() {
         StatusBarView statusBarView = new StatusBarView();
-         statusBarView.displayStatusBarView();
+         statusBarView.display();
     }
 
     private void supplyShop() {
         SupplyShopView supplyShopView = new SupplyShopView();
-        supplyShopView.displaySupplyShopView();
+        supplyShopView.display();
     }
 
-    private void exit() {
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-    }
 
 }

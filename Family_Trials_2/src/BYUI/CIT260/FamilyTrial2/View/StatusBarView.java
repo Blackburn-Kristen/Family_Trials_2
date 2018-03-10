@@ -11,65 +11,20 @@ import java.util.Scanner;
  *
  * @author krist
  */
-public class StatusBarView {
+public class StatusBarView extends View{
     
     public StatusBarView(){
+        super("\nStatus Bar\n" + "\tC - Car health\n" + 
+                         "\tH - Happiness\n" + "\tT - Time\n" + "\tM - Exit to Main Menu"
+                            + "Please Select menu option");
         
     }
-
-    void displayStatusBarView() {
-        
-         boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
+        @Override
+        public boolean doAction(String value){
            
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
+        value = value.toUpperCase();
         
-    }
-    
-    private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-      
-      System.out.println("\nStatus Bar\n" + "\tC - Car health\n" + 
-                         "\tH - Happiness\n" + "\tT - Time\n" + "\tM - Exit to Main Menu");
-        
-          System.out.println("Please Select a menu option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a menu value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
-    }
-          
-        private boolean doAction(String[] inputs){
-           
-        String[] menuItem = inputs;
-        String item = menuItem[0].toUpperCase();
-        
-        switch(item.charAt(0)){
+        switch(value.charAt(0)){
             case 'C':
                 showCarHealth();
                 break;
@@ -80,7 +35,6 @@ public class StatusBarView {
                 showTime();
                 break;
             case 'M':
-                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -101,9 +55,5 @@ public class StatusBarView {
         System.out.println("showTime() called");
     }
 
-    private void exit() {
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-    }
 
 }

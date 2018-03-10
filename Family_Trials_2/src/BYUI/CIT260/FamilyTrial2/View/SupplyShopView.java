@@ -11,65 +11,20 @@ import java.util.Scanner;
  *
  * @author krist
  */
-public class SupplyShopView {
+public class SupplyShopView extends View{
     
     public SupplyShopView(){
-       
+        super("Supply Shop\n" + "\tS - See Snack Options\n" + 
+                         "\tC - See Car Part Options\n" + "\tM - Exit to Main Menu\n"
+                            + "Please Select a Menu option");
     }
 
-    void displaySupplyShopView() {
-        
-         boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
+    @Override
+     public boolean doAction(String value){
            
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
+        value = value.toUpperCase();
         
-    }
-    
-    private String[] getInputs(){
-        
-        String[] inputs = new String[1];
-      
-      System.out.println("Supply Shop\n" + "\tS - See Snack Options\n" + 
-                         "\tC - See Car Part Options\n" + "\tM - Exit to Main Menu\n");
-        
-          System.out.println("Please Select a menu option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a menu value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
-    }
-    
-     private boolean doAction(String[] inputs){
-           
-        String[] menuItem = inputs;
-        String item = menuItem[0].toUpperCase();
-        
-        switch(item.charAt(0)){
+        switch(value.charAt(0)){
             case 'S':
                 snackOptions();
                 break;
@@ -77,7 +32,6 @@ public class SupplyShopView {
                 carPartOptions();
                 break;
             case 'M':
-                exit();
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -88,17 +42,12 @@ public class SupplyShopView {
 
     private void snackOptions() {
        SnackSupplyMenuView snackSupplyMenuView = new SnackSupplyMenuView();
-        snackSupplyMenuView.displaySnackSupplyMenuView();
+        snackSupplyMenuView.display();
     }
 
     private void carPartOptions() {
        CarPartsMenuView carPartsMenuView = new CarPartsMenuView();
-        carPartsMenuView.displayCarPartsMenuView();
-    }
-
-    private void exit() {
-         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
+        carPartsMenuView.display();
     }
 
 

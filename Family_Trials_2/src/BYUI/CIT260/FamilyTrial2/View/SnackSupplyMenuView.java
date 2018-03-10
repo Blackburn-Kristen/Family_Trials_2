@@ -11,66 +11,21 @@ import java.util.Scanner;
  *
  * @author Katrina
  */
-public class SnackSupplyMenuView {
+public class SnackSupplyMenuView extends View{
     
-    public SnackSupplyMenuView(){    
-    }
-    
-    void displaySnackSupplyMenuView() {
-         
-        boolean endOfView = false;
-        do{
-           String[] inputs = getInputs();
-           
-           if(inputs[0] == null || "Q".equals(inputs[0]) || "q".equals(inputs[0])){
-               continue;
-           }
-               
-           endOfView = doAction(inputs);
-        }
-           while(endOfView != true);
-        
-    }
-
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        
-         System.out.println("Snack Options\n" + "\tC - Carrot Sticks \n" + 
+    public SnackSupplyMenuView(){ 
+        super("Snack Options\n" + "\tC - Carrot Sticks \n" + 
                          "\tA - Apple Slices\n" + "\tW - Water\n"
               + "\tB - Candy Bar \n" + "\tS - Soda \n" + "\tP - Potato Chips \n" +
-                 "\tM - Quit");
-        
-          System.out.println("Please Select a Snack option");
-          
-      
-      boolean valid = false;
-      
-      while( valid == false ){
-          
-          Scanner inFile;
-          inFile = new Scanner(System.in);
-          
-          String option = inFile.nextLine();
-          
-          if(option.length() < 1 ){
-              System.out.println("You must enter a Shop value");
-              continue;
-          }
-          
-          inputs[0] = option.trim();
-          
-          valid = true;
-          }
-          return inputs;
-    
+                 "\tM - Quit" + "Please Select a Snack option");
     }
-
-    private boolean doAction(String[] inputs) {
+    
+    @Override
+    public boolean doAction(String value) {
            
-        String[] menuItem = inputs;
-        String item = menuItem[0].toUpperCase();
+        value = value.toUpperCase();
         
-        switch(item.charAt(0)){
+        switch(value.charAt(0)){
             case 'C':
                 carrotSticks();
                 break;
