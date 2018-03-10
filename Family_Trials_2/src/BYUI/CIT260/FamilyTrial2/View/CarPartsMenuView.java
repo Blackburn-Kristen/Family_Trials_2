@@ -15,7 +15,7 @@ public class CarPartsMenuView extends View {
     
     public CarPartsMenuView(){
        super("Car Parts Shop\n" + "\tO - Oil\n" + 
-                         "\tC - Coolant\n" + "\tS - Spare Tires" + "\tM - Exit to Main Menu\n" +
+                         "\tC - Coolant\n" + "\tS - Spare Tires\n" + "\tX - Exit\n" +
                             "Please Select a menu option"); 
     }
      
@@ -34,7 +34,7 @@ public class CarPartsMenuView extends View {
             case 'S':
                 getSpareTire();
                 break;
-            case 'M':
+            case 'X':
                 return true;
             default:
                 System.out.println("Invalid menu item.");
@@ -42,9 +42,10 @@ public class CarPartsMenuView extends View {
         }
         return false;
           }
-
+     
     private void getOil() {
-        System.out.println("getOil() called");
+        GetOilMenuView getOilMenuView = new GetOilMenuView();
+        getOilMenuView.display();
     }
 
     private void getCoolant() {

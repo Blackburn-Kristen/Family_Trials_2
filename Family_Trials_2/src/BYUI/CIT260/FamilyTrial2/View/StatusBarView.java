@@ -15,7 +15,7 @@ public class StatusBarView extends View{
     
     public StatusBarView(){
         super("\nStatus Bar\n" + "\tC - Car health\n" + 
-                         "\tH - Happiness\n" + "\tT - Time\n" + "\tM - Exit to Main Menu"
+                         "\tH - Happiness\n" + "\tT - Time\n" + "\tX - Exit\n"
                             + "Please Select menu option");
         
     }
@@ -34,7 +34,7 @@ public class StatusBarView extends View{
             case 'T':
                 showTime();
                 break;
-            case 'M':
+            case 'X':
                 return true;
             default:
                 System.out.println("Invalid menu item.");

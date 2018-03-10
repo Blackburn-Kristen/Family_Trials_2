@@ -15,7 +15,7 @@ public class SupplyShopView extends View{
     
     public SupplyShopView(){
         super("Supply Shop\n" + "\tS - See Snack Options\n" + 
-                         "\tC - See Car Part Options\n" + "\tM - Exit to Main Menu\n"
+                         "\tC - See Car Part Options\n" + "\tX - Exit\n"
                             + "Please Select a Menu option");
     }
 
@@ -31,7 +31,7 @@ public class SupplyShopView extends View{
             case 'C':
                 carPartOptions();
                 break;
-            case 'M':
+            case 'X':
                 return true;
             default:
                 System.out.println("Invalid menu item.");
