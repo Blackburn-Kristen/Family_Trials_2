@@ -55,7 +55,8 @@ public class SnackSupplyMenuView extends View{
           }
 
     private void carrotSticks() {
-        System.out.println("carrotSticks() Called");
+        GetCarrotSticksMenuView getCarrotSticksMenuView = new GetCarrotSticksMenuView();
+        getCarrotSticksMenuView.display();
     }
 
     private void appleSlices() {
