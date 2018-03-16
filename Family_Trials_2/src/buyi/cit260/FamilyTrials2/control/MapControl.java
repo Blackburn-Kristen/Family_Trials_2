@@ -5,10 +5,22 @@
  */
 package buyi.cit260.FamilyTrials2.control;
 
+import BYUI.CIT260.Family_Trials_2.model.Map;
+
 /**
  *
  * @author Katrina
  */
 public class MapControl {
+    
+    public MapControl(){
+    }
+    
+    public static Map createMap(int noOfRows, int noOfColumns){
+        
+        System.out.println("createMap called");
+        
+        return null;
+    }
     
 }

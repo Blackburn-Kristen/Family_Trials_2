@@ -5,7 +5,9 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 
+import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import buyi.cit260.FamilyTrials2.control.GameControl;
+import buyi.cit260.FamilyTrials2.control.MapControl;
 import family_trials_2.Family_Trials_2;
 import java.util.Scanner;
 
@@ -48,11 +50,18 @@ public class MainMenuView extends View {
         
         private void startNewGame(){
        
-            GameControl.createNewGame(Family_Trials_2.getPlayer());
-            
-        GameMenuView gameMenuView = new GameMenuView();
-         gameMenuView.displayGameMenuView();
+           int returnValue = (int) GameControl.createNewGame(Family_Trials_2.getPlayer());
+            if (returnValue < 0){
+                System.out.println("ERROR - Failed to create new game");
         }
+            
+           GameControl gameControl = new GameControl();
+        Inventory[] createItems = GameControl.createItems();
+       
+        MapControl mapControl = new MapControl();
+        mapControl.createMap(5,5);
+        
+    }
 
     private void restartGame() {
         
