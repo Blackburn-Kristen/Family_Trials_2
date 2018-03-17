@@ -7,6 +7,8 @@ package buyi.cit260.FamilyTrials2.control;
 
 import BYUI.CIT260.Family_Trials_2.model.Location;
 import BYUI.CIT260.Family_Trials_2.model.Map;
+import BYUI.CIT260.Family_Trials_2.model.Questions;
+import BYUI.CIT260.Family_Trials_2.model.Scenes;
 
 /**
  *
@@ -26,38 +28,31 @@ public class MapControl {
             return null;
         }
         
-        Map map = Map(noOfRows, noOfCol);
+        
         noOfRows = 3;
         noOfCol = 25;
-        Location[][] locationsInMap = new Location[noOfRows][noOfCol];
+        Map map = Map(noOfRows, noOfCol);
+        locations = new Location[][]();
+               for( int i = 0; i < locations.length; i++ ){
+                   for(int j = 0; j < locations.length; j++){
+                       locations += Location[i][j];
+                   }
+               }
+        Location[i][j] locationsInMap = new Location[noOfRows][noOfCol];
                
-        scenes = createScenes();
-        questions = createQuestions();
+        Scenes scenes = createScenes();
+        Questions questions = createQuestions();
         
-        assigneQuestionsToScenes();
-        assignItemsToScenes();
+        assignQuesions = assigneQuestionsToScenes();
+        addignItems = assignItemsToScenes();
         
-        assignScenesToLocations();
+        assignScenesToLocations = assignScenesToLocations();
+        
         
         return map;
     }
     
-    private static Location[][] createLocations(int rows,int columns){
-       
-        if( rows <1 || columns < 1 ){
-            
-            return null;
-        }
-        
-        locations = new Location[][]();
-               for( int i = 0; i < locations.length; i++ ){
-                   for(int j = 0; j < locations.length; j++){
-                       locations += Location[i][j]; 
-                   }
-               }
-        
-        return locations;
-    }
+   
 private static Scene[] createScenes(){
         return null;
  
