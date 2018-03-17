@@ -30,6 +30,8 @@ public class GameControl {
         
         Player player = new Player();
         
+        player.setName(playerName[0]);
+        
                 return player;
     }
     

@@ -6,6 +6,7 @@
 package BYUI.CIT260.FamilyTrial2.View;
 import BYUI.CIT260.Family_Trials_2.model.Player;
 import buyi.cit260.FamilyTrials2.control.GameControl;
+import family_trials_2.Family_Trials_2;
 import java.util.Arrays;
 
 import java.util.Scanner;
@@ -69,12 +70,14 @@ public class StartProgramView {
            
         String[] playerName = inputs;
         Player player = GameControl.createNewPlayer(playerName);
-        
+          
         if( player == null ){
             System.out.println("could not create the player.");
             System.out.println("Enter a different name");
             return false;
         }
+        
+        Family_Trials_2.setPlayer(player);
         
         System.out.println("==================================================");
         System.out.println("Welcom to the game" + Arrays.toString(playerName));

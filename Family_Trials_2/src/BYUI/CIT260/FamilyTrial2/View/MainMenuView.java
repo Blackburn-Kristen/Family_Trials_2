@@ -58,9 +58,6 @@ public class MainMenuView extends View {
            GameControl gameControl = new GameControl();
         Inventory[] createItems = GameControl.createItems();
        
-        MapControl mapControl = new MapControl();
-        mapControl.createMap(5,5);
-        
     }
 
     private void restartGame() {

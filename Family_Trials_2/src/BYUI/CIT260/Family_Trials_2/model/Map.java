@@ -21,28 +21,21 @@ public class Map implements Serializable {
     private double columnCount;
     private double currentRow;
     private double currentColumn;
-    private Location location;
-    private ArrayList<Game> games = new ArrayList<Game>();
+    private Location[][] locations;
 
-    public Map() {
-    }
-
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
+    public Map(int noOfRow, int noOfCol) {
+        this.rowCount = noOfRow;
+        this.columnCount = noOfCol;
+        this.locations = new Location[noOfRow][noOfCol];
     }
     
-    
 
-    public Location getLocation() {
-        return location;
+    public Location[][] getLocation() {
+        return locations;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocation(Location[][] location) {
+        this.locations = location;
     }
 
     public String getDescription() {
