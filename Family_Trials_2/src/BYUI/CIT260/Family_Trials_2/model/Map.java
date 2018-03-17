@@ -23,6 +23,11 @@ public class Map implements Serializable {
     private double currentColumn;
     private Location[][] locations;
 
+    /**
+     *
+     * @param noOfRow
+     * @param noOfCol
+     */
     public Map(int noOfRow, int noOfCol) {
         this.rowCount = noOfRow;
         this.columnCount = noOfCol;
