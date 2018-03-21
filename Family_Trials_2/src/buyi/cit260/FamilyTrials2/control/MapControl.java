@@ -8,8 +8,12 @@ package buyi.cit260.FamilyTrials2.control;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import BYUI.CIT260.Family_Trials_2.model.Location;
 import BYUI.CIT260.Family_Trials_2.model.Map;
+import BYUI.CIT260.Family_Trials_2.model.QuestionType;
 import BYUI.CIT260.Family_Trials_2.model.Questions;
+import BYUI.CIT260.Family_Trials_2.model.SceneType;
+import static BYUI.CIT260.Family_Trials_2.model.SceneType.start;
 import BYUI.CIT260.Family_Trials_2.model.Scenes;
+import java.util.ArrayList;
 import javafx.scene.Scene;
 
 /**
@@ -17,9 +21,6 @@ import javafx.scene.Scene;
  * @author Katrina
  */
 public class MapControl {
-   
-    private String scenes;
-    private String questions;
     
     public MapControl(){
     }
@@ -45,14 +46,17 @@ public class MapControl {
                    }
                }
                map.setLocation(locations);
-        
+               
+               Scenes[] scenes;
+               scenes = new Scenes[30];
                scenes = createScenes();
+               Questions[] questions;
+               questions = new Questions[29];
                questions = createQuestions();
                
-               assignQuestionsToScenes();
-               assignItemsToScenes();
+               assignQuestionsToScenes(questions, scenes);
                
-               assignScenesToLocations();
+               assignScenesToLocations(scenes, locations);
                
         return map;
     }
@@ -61,21 +65,22 @@ public class MapControl {
 private static Scenes[] createScenes(){
     
     Scenes[] scenes;
-    scenes = new Scenes[25];
-        return null;
+    scenes = new Scenes[30];
+    
+    scenes[0] = new Scenes();
+    scenes[SceneType.start.ordinal()] = start; 
+        return scenes;
  
 }
 private static Questions[] createQuestions(){
         return null;
     
 }
-private static void assignQuestionsToScenes(Questions[] questions,Scene[] scenes){
+private static void assignQuestionsToScenes(Questions[] questions,Scenes[] scenes){
     
 }
-private static void assignItemsToScenes(Inventory[] items, Scene[] scenes){
-    
-}
-private static void assignScenesToLocations(Scene[] scenes,Location[][] locations){
+
+private static void assignScenesToLocations(Scenes[] scenes,Location[][] locations){
     
     
 }

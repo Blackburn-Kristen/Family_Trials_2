@@ -14,5 +14,9 @@ public class Scenes {
     public Scenes(){
         
     }
-    
+    private String createScene;
+
+    public void setCreateScene(String createScene) {
+        this.createScene = createScene;
+    }
 }
