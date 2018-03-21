@@ -18,7 +18,8 @@ import javafx.scene.Scene;
  */
 public class MapControl {
    
-    
+    private String scenes;
+    private String questions;
     
     public MapControl(){
     }
@@ -45,6 +46,14 @@ public class MapControl {
                }
                map.setLocation(locations);
         
+               scenes = createScenes();
+               questions = createQuestions();
+               
+               assignQuestionsToScenes();
+               assignItemsToScenes();
+               
+               assignScenesToLocations();
+               
         return map;
     }
     
