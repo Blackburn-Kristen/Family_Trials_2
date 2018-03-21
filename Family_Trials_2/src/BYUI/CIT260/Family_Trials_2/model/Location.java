@@ -15,8 +15,35 @@ import java.util.ArrayList;
 public class Location implements Serializable {
     
     // class instances
+    private int row;
+    private int col;
+    private boolean visited;
     private double gmasHouse;
     private double touristTrap;
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
     private double pitStop;
     private double restaurant;
     private double gasStation;
