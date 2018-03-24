@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Katrina
  */
-public class QuestionScene implements Serializable{
+public class QuestionScene extends Scenes implements Serializable{
     //class instance variable
     private String noToAnswer;
     private double addInventory;

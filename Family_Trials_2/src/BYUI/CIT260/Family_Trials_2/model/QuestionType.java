@@ -10,7 +10,7 @@ package BYUI.CIT260.Family_Trials_2.model;
  * @author Katrina
  */
 public enum QuestionType {
-    Start,
+    start,
     goToPitStop,
     goToMcDonald,
     goToWendys,

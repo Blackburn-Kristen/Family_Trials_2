@@ -68,12 +68,27 @@ private static Scenes[] createScenes(){
     scenes = new Scenes[30];
     
     scenes[0] = new Scenes();
-    scenes[SceneType.start.ordinal()] = start; 
+    
+    scenes[SceneType.start.ordinal()].setWelcomeMessage("We are going to have a great adventure!");
+    scenes[SceneType.start.ordinal()].setHappinessFactor(0);  // no change for start
+
+    scenes[SceneType.mcDonald.ordinal()].setWelcomeMessage("Would you like fries with that?");
+    scenes[SceneType.mcDonald.ordinal()].setHappinessFactor(10);  // Increases happiness
+  
         return scenes;
  
 }
 private static Questions[] createQuestions(){
-        return null;
+        
+        Questions[] questions;
+        questions = new Questions[29];
+        
+        questions[0] = new Questions();
+        
+        questions[QuestionType.start.ordinal()].setAskQuestion("Where would you like to go first?");
+        
+        
+        return questions;
     
 }
 private static void assignQuestionsToScenes(Questions[] questions,Scenes[] scenes){

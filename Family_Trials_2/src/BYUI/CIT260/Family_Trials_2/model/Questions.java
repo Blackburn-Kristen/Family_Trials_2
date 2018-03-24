@@ -15,4 +15,36 @@ public class Questions {
         
     }
     
+    private QuestionType questionType;
+    private String askQuestion;
+
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public String getAskQuestion() {
+        return askQuestion;
+    }
+
+    
+    public Questions(QuestionType inQuestionType){
+        this.questionType = inQuestionType;
+    }
+
+    public QuestionType getSceneType() {
+        return questionType;
+    }
+
+    public void setSceneType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public void setAskQuestion(String askQuestion) {
+        this.askQuestion = askQuestion;
+    }
+    
 }
