@@ -80,7 +80,7 @@ public class StartProgramView {
         Family_Trials_2.setPlayer(player);
         
         System.out.println("==================================================");
-        System.out.println("Welcom to the game" + Arrays.toString(playerName));
+        System.out.println("Welcome to the game" + Arrays.toString(playerName));
         System.out.println("We hope you have a lot of fun!");
         System.out.println("==================================================");
         

@@ -49,13 +49,19 @@ public class MainMenuView extends View {
 
         
         private void startNewGame(){
+            
+            System.out.println("startNewGame called");
+            
        
            int returnValue = (int) GameControl.createNewGame(Family_Trials_2.getPlayer());
+           System.out.println("createNewGame called");
             if (returnValue < 0){
                 System.out.println("ERROR - Failed to create new game");
         }
             
+            
            GameControl gameControl = new GameControl();
+           System.out.println("game control made");
         Inventory[] createItems = GameControl.createItems();
        
     }

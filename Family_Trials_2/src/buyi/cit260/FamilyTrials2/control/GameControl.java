@@ -60,7 +60,6 @@ RETURN 1 // indicates success
             }
     
         Game game = new Game();
-        game.getPlayer();
         game.setPlayer(player);
         
         MapControl mapControl = new MapControl();

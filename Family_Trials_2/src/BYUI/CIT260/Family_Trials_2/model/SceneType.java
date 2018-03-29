@@ -38,7 +38,6 @@ public enum SceneType {
     statueOfLiberty,
     bryceCanyon,
     metropolitanMuseumOfArt,
-    instructions,
     finish,
     
 }

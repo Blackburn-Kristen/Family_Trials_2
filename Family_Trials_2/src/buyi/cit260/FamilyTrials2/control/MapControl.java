@@ -64,9 +64,12 @@ public class MapControl {
 private static Scenes[] createScenes(){
     
     Scenes[] scenes;
-    scenes = new Scenes[30];
+    scenes = new Scenes[29];
     
-    scenes[0] = new Scenes();
+    for (int i = 0; i < 29; i++){
+        scenes[i] = new Scenes();
+        
+    }
     
     scenes[SceneType.start.ordinal()].setWelcomeMessage("We are going to have a great adventure!");
     scenes[SceneType.start.ordinal()].setHappinessFactor(0);  // no change for start
@@ -152,9 +155,6 @@ private static Scenes[] createScenes(){
     scenes[SceneType.metropolitanMuseumOfArt.ordinal()].setWelcomeMessage("I feel so cultured now.");
     scenes[SceneType.metropolitanMuseumOfArt.ordinal()].setHappinessFactor(20);  // Increases happiness
     
-    scenes[SceneType.instructions.ordinal()].setWelcomeMessage("If you are here you are lost.");
-    scenes[SceneType.instructions.ordinal()].setHappinessFactor(0);  // Increases happiness
-    
     scenes[SceneType.finish.ordinal()].setWelcomeMessage("Yay! Grandma's House! Yay Grandma!");
     scenes[SceneType.finish.ordinal()].setHappinessFactor(0);  // Increases happiness
     
@@ -164,11 +164,12 @@ private static Scenes[] createScenes(){
 private static Questions[] createQuestions(){
         
         Questions[] questions;
-        questions = new Questions[29];
+        questions = new Questions[27];
         
-        questions[0] = new Questions();
-        
-        questions[QuestionType.start.ordinal()].setAskQuestion("Where would you like to go first?");
+         for (int i = 0; i < 27; i++){
+        questions[i] = new Questions();
+         }
+         
         
         questions[QuestionType.goToPitStop.ordinal()].setAskQuestion("Would you like to take a Pit Stop?");
         
@@ -222,8 +223,6 @@ private static Questions[] createQuestions(){
         
         questions[QuestionType.goToMetropolitanMuseumOfArt.ordinal()].setAskQuestion("Would you like to visit Metropolitan Museum of Art?");
         
-        questions[QuestionType.getInstructions.ordinal()].setAskQuestion("Would you like to view the instructions?");
-        
         questions[QuestionType.yayYouFinished.ordinal()].setAskQuestion("Would you like to visit Grandma's house?");
         
         return questions;
@@ -234,9 +233,38 @@ private static void assignScenesToLocations(Scenes[] scenes,Location[][] locatio
     locations[1][0].setScene(scenes[SceneType.start.ordinal()]); 
     locations[0][1].setScene(scenes[SceneType.supplyShop.ordinal()]);
     locations[0][2].setScene(scenes[SceneType.pitStop.ordinal()]);
-    locations[0][3].setScene(scenes[SceneType.gasStation.ordinal()]);
     locations[0][4].setScene(scenes[SceneType.mcDonald.ordinal()]);
+    locations[0][8].setScene(scenes[SceneType.wendys.ordinal()]);
+    locations[0][16].setScene(scenes[SceneType.crackerBarrel.ordinal()]);
+    locations[0][20].setScene(scenes[SceneType.iHOP.ordinal()]);
+    locations[0][3].setScene(scenes[SceneType.gasStation.ordinal()]);
+    locations[0][12].setScene(scenes[SceneType.hotel.ordinal()]);
+    locations[2][17].setScene(scenes[SceneType.biggestBallOfYarn.ordinal()]);
+    locations[2][22].setScene(scenes[SceneType.earWaxMuseum.ordinal()]);
+    locations[2][23].setScene(scenes[SceneType.scariestButterFlyCollection.ordinal()]);
+    locations[2][3].setScene(scenes[SceneType.largestPairBoots.ordinal()]);
+    locations[2][9].setScene(scenes[SceneType.americansTiniestTown.ordinal()]);
+    locations[2][8].setScene(scenes[SceneType.jackalopePettingZoo.ordinal()]);
+    locations[2][12].setScene(scenes[SceneType.theThing.ordinal()]);
+    locations[2][13].setScene(scenes[SceneType.area51.ordinal()]);
+    locations[2][16].setScene(scenes[SceneType.nuclearWasteAdventureTrail.ordinal()]);
+    locations[2][10].setScene(scenes[SceneType.grandCanyon.ordinal()]);
+    locations[2][15].setScene(scenes[SceneType.mountRushmore.ordinal()]);
+    locations[2][18].setScene(scenes[SceneType.niagaraFalls.ordinal()]);
+    locations[2][4].setScene(scenes[SceneType.goldenGateBridge.ordinal()]);
+    locations[2][7].setScene(scenes[SceneType.yellowStone.ordinal()]);
+    locations[2][5].setScene(scenes[SceneType.yosemiteNationalPark.ordinal()]);
+    locations[2][24].setScene(scenes[SceneType.disneyWold.ordinal()]);
+    locations[2][19].setScene(scenes[SceneType.statueOfLiberty.ordinal()]);
+    locations[2][11].setScene(scenes[SceneType.bryceCanyon.ordinal()]);
+    locations[2][20].setScene(scenes[SceneType.metropolitanMuseumOfArt.ordinal()]);
+    locations[2][27].setScene(scenes[SceneType.finish.ordinal()]);
     
+}
+
+private static void assignQuestionToLocations(Questions[] questions,Location[][] locations){
+    
+    locations[1][2].setQuestion(questions[QuestionType.goToPitStop.ordinal()]);
     
     
 }
