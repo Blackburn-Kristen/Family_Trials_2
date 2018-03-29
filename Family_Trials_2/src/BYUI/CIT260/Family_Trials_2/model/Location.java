@@ -20,7 +20,25 @@ public class Location implements Serializable {
     private boolean visited;
     private double gmasHouse;
     private double touristTrap;
+    private Scenes scene = null;
+    private Questions question = null;
 
+    public Questions getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Questions question) {
+        this.question = question;
+    }
+
+    public Scenes getScene() {
+        return scene;
+    }
+
+    public void setScene(Scenes scene) {
+        this.scene = scene;
+    }
+    
     public int getRow() {
         return row;
     }
