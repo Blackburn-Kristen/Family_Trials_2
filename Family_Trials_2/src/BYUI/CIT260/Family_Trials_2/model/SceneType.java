@@ -14,8 +14,6 @@ public enum SceneType {
     supplyShop,
     pitStop,
     mcDonald,
-    wendys,
-    crackerBarrel,
     iHOP,
     gasStation,
     hotel,

@@ -12,8 +12,6 @@ package BYUI.CIT260.Family_Trials_2.model;
 public enum QuestionType {
     goToPitStop,
     goToMcDonald,
-    goToWendys,
-    goToCrackerBarrel,
     goToIHOP,
     goToGasStation,
     goToHotel,
