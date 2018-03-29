@@ -64,7 +64,7 @@ RETURN 1 // indicates success
         game.setPlayer(player);
         
         MapControl mapControl = new MapControl();
-        Map map = MapControl.createMap(5, 5);  
+        Map map = MapControl.createMap(3, 27);  
         
         if (map == null){
             

@@ -16,10 +16,6 @@ public class Scenes {
     }
     private SceneType sceneType;
     private String welcomeMessage;
-    // Add other stuff that all Scenes need: 
-    // use of life? 
-    // increased hunger?
-    // Happiness factor?  The increase(+) or decrease(-) of happiness having come to this location?
     private int happinessFactor;
 
     public int getHappinessFactor() {
