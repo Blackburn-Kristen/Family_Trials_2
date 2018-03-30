@@ -5,11 +5,14 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 
+import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import buyi.cit260.FamilyTrials2.control.GameControl;
 import buyi.cit260.FamilyTrials2.control.MapControl;
 import family_trials_2.Family_Trials_2;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -53,15 +56,13 @@ public class MainMenuView extends View {
             System.out.println("startNewGame called");
             
        
-           int returnValue = (int) GameControl.createNewGame(Family_Trials_2.getPlayer());
-           System.out.println("createNewGame called");
-            if (returnValue < 0){
-                System.out.println("ERROR - Failed to create new game");
+        try {
+            GameControl.createNewGame(Family_Trials_2.getPlayer());
+        } catch (GameControlException ex) {
+            System.out.println(ex.getMessage());
         }
-            
-            
-           GameControl gameControl = new GameControl();
-           System.out.println("game control made");
+           System.out.println("createNewGame called");
+          
         Inventory[] createItems = GameControl.createItems();
        
     }

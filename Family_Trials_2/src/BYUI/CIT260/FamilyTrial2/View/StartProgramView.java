@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 package BYUI.CIT260.FamilyTrial2.View;
+import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
 import BYUI.CIT260.Family_Trials_2.model.Player;
 import buyi.cit260.FamilyTrials2.control.GameControl;
 import family_trials_2.Family_Trials_2;
 import java.util.Arrays;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -69,13 +72,15 @@ public class StartProgramView {
     private boolean doAction(String[] inputs){
            
         String[] playerName = inputs;
-        Player player = GameControl.createNewPlayer(playerName);
-          
-        if( player == null ){
-            System.out.println("could not create the player.");
-            System.out.println("Enter a different name");
-            return false;
+        Player player;
+        try {
+            player = GameControl.createNewPlayer(playerName);
+        } catch (GameControlException ex) {
+           System.out.println(ex.getMessage());
+           return false;
         }
+          
+        
         
         Family_Trials_2.setPlayer(player);
         

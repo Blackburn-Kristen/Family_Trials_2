@@ -279,5 +279,37 @@ private static void assignQuestionToLocations(Questions[] questions,Location[][]
     locations[1][26].setQuestion(questions[QuestionType.yayYouFinished.ordinal()]);
     
 }
+   
+/*public static Location moveActor(actor, newRow, newColumn) {
+ if actor is null then
+ throw MapControlException
+ endIf
+ game = get the currentGame in the main class
+ map = get the map in the game object
+ locations = get the locations in the map
+ if (newRow < 1 OR newRow > noOfRows in map OR
+ newColumn < 1 OR newColumn > noOfColumns in map) then
+ throw MapControlException
+ endIf
+ currentRow = get the row from the actor
+ currentColumn = get the column from the actor
+ oldLocation = get the location from the locations
+ array at the current row and column
+ newLocation = get the location at the new row and column
+ set actor in the oldLocation to null
+ set actor in the newLocation to the actor
+ set row in actor to newRow
+ set column in actor to newColumn
+ return newLocation
+*/
+
+public static Location MoveVehicle(vehicle, newRow, newColumn){
     
+    if(vehicle = null){
+        throw new MapControlException("Invalid Vehicle");
+    }
+
+
+}
+   
 }

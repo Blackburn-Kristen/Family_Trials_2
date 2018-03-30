@@ -9,6 +9,8 @@ package BYUI.CIT260.FamilyTrials2.exceptions;
  *
  * @author Katrina
  */
-public class GameControlExceptions {
+public class MapControlException {
+    
+    
     
 }

@@ -9,7 +9,6 @@ package BYUI.CIT260.FamilyTrials2.exceptions;
  *
  * @author Katrina
  */
-public class VehicleControlExceptions {
-    
+public class StatusPercentControlException {
     
 }

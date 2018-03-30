@@ -5,6 +5,7 @@
  */
 package buyi.cit260.FamilyTrials2.control;
 
+import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
 import BYUI.CIT260.Family_Trials_2.model.Game;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import BYUI.CIT260.Family_Trials_2.model.Map;
@@ -22,10 +23,10 @@ public class GameControl {
     public GameControl(){
     } 
 
-    public static Player createNewPlayer(String[] playerName) {
+    public static Player createNewPlayer(String[] playerName) throws GameControlException {
         
         if(playerName == null || playerName[0].length() < 1 ){
-            return null;
+            throw new GameControlException("Invalid Character Name.");
         } 
         
         Player player = new Player();
@@ -35,7 +36,7 @@ public class GameControl {
                 return player;
     }
     
-    public static int createNewGame(Player player){
+    public static void createNewGame(Player player) throws GameControlException{
           /**public static int createNewGame(Player player) {
 if (player == null)
 return -1
@@ -56,7 +57,7 @@ RETURN 1 // indicates success
 }*/
         if (player == null){
             
-            return -1;
+            throw new GameControlException("Invalid Character Name,");
             }
     
         Game game = new Game();
@@ -67,11 +68,11 @@ RETURN 1 // indicates success
         
         if (map == null){
             
-            return -1;
+            throw new GameControlException("Map creation failed.");
             
         }
         
-    return 1;
+ 
         
 }
 
