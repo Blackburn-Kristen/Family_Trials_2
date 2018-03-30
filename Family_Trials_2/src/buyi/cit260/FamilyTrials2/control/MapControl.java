@@ -37,8 +37,8 @@ public class MapControl {
        Map map =  new Map(noOfRows, noOfCol);
        Location[][] locations;
         locations = new Location[noOfRows][noOfCol];
-               for( int i = 0; i < locations.length; i++ ){
-                   for(int j = 0; j < locations.length; j++){
+               for( int i = 0; i < noOfRows; i++ ){
+                   for(int j = 0; j < noOfCol; j++){
                       Location temp = new Location();
                       temp.setRow(i);
                       temp.setCol(j);
@@ -246,7 +246,7 @@ private static void assignScenesToLocations(Scenes[] scenes,Location[][] locatio
     locations[2][19].setScene(scenes[SceneType.statueOfLiberty.ordinal()]);
     locations[2][11].setScene(scenes[SceneType.bryceCanyon.ordinal()]);
     locations[2][20].setScene(scenes[SceneType.metropolitanMuseumOfArt.ordinal()]);
-    locations[2][27].setScene(scenes[SceneType.finish.ordinal()]);
+    locations[2][26].setScene(scenes[SceneType.finish.ordinal()]);
     
 }
 
@@ -276,7 +276,7 @@ private static void assignQuestionToLocations(Questions[] questions,Location[][]
     locations[1][19].setQuestion(questions[QuestionType.goToStatueOfLiberty.ordinal()]);
     locations[1][11].setQuestion(questions[QuestionType.goToBryceCanyon.ordinal()]);
     locations[1][20].setQuestion(questions[QuestionType.goToMetropolitanMuseumOfArt.ordinal()]);
-    locations[1][27].setQuestion(questions[QuestionType.yayYouFinished.ordinal()]);
+    locations[1][26].setQuestion(questions[QuestionType.yayYouFinished.ordinal()]);
     
 }
     
