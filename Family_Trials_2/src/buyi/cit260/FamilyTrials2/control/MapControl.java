@@ -5,6 +5,8 @@
  */
 package buyi.cit260.FamilyTrials2.control;
 
+import BYUI.CIT260.FamilyTrials2.exceptions.MapControlException;
+import BYUI.CIT260.Family_Trials_2.model.Game;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import BYUI.CIT260.Family_Trials_2.model.Location;
 import BYUI.CIT260.Family_Trials_2.model.Map;
@@ -14,6 +16,9 @@ import BYUI.CIT260.Family_Trials_2.model.Questions;
 import BYUI.CIT260.Family_Trials_2.model.SceneType;
 import static BYUI.CIT260.Family_Trials_2.model.SceneType.start;
 import BYUI.CIT260.Family_Trials_2.model.Scenes;
+import BYUI.CIT260.Family_Trials_2.model.Vehicle;
+import family_trials_2.Family_Trials_2;
+import static family_trials_2.Family_Trials_2.getCurrentGame;
 import java.util.ArrayList;
 import javafx.scene.Scene;
 
@@ -26,11 +31,13 @@ public class MapControl {
     public MapControl(){
     }
     
-    public static Map createMap(int noOfRows, int noOfCol){
+    private Vehicle vehicle = null;
+    
+    public static Map createMap(int noOfRows, int noOfCol) throws MapControlException{
         
         if( noOfRows < 0 || noOfCol < 0 ){
             
-            return null;
+            throw new MapControlException("Error Creatring Map.");
         }
         
        
@@ -303,13 +310,14 @@ private static void assignQuestionToLocations(Questions[] questions,Location[][]
  return newLocation
 */
 
-public static Location MoveVehicle(vehicle, newRow, newColumn){
+public static Location MoveVehicle(Vehicle vehicle, int newRow, int newColumn) throws MapControlException{
     
     if(vehicle = null){
         throw new MapControlException("Invalid Vehicle");
     }
 
+    Family_Trials_2 game = new getCurrentGame();
 
+    
 }
    
-}
