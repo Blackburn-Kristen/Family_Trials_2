@@ -310,13 +310,13 @@ private static void assignQuestionToLocations(Questions[] questions,Location[][]
  return newLocation
 */
 
-public static Location MoveVehicle(Vehicle vehicle, int newRow, int newColumn) throws MapControlException{
+/*public static Location MoveVehicle(Vehicle vehicle, int newRow, int newColumn) throws MapControlException{
     
     if(vehicle = null){
         throw new MapControlException("Invalid Vehicle");
     }
 
-    Family_Trials_2 game = new getCurrentGame();
+    Family_Trials_2 game = new getCurrentGame(); */
 
     
 }

@@ -9,6 +9,25 @@ package BYUI.CIT260.FamilyTrials2.exceptions;
  *
  * @author Katrina
  */
-public class StatusPercentControlException {
+public class StatusPercentControlException extends Exception {
+
+    public StatusPercentControlException() {
+    }
+
+    public StatusPercentControlException(String string) {
+        super(string);
+    }
+
+    public StatusPercentControlException(String string, Throwable thrwbl) {
+        super(string, thrwbl);
+    }
+
+    public StatusPercentControlException(Throwable thrwbl) {
+        super(thrwbl);
+    }
+
+    public StatusPercentControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
+        super(string, thrwbl, bln, bln1);
+    }
     
 }

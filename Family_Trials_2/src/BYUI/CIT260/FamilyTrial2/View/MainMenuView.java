@@ -6,6 +6,7 @@
 package BYUI.CIT260.FamilyTrial2.View;
 
 import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
+import BYUI.CIT260.FamilyTrials2.exceptions.MapControlException;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import buyi.cit260.FamilyTrials2.control.GameControl;
 import buyi.cit260.FamilyTrials2.control.MapControl;
@@ -33,7 +34,13 @@ public class MainMenuView extends View {
         
         switch(value.charAt(0)){
             case 'N':
+        {
+            try {
                 startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'R':
                 restartGame();
@@ -51,7 +58,7 @@ public class MainMenuView extends View {
     }
 
         
-        private void startNewGame(){
+        private void startNewGame() throws MapControlException{
             
             System.out.println("startNewGame called");
             

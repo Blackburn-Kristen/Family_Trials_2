@@ -6,6 +6,7 @@
 package buyi.cit260.FamilyTrials2.control;
 
 import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
+import BYUI.CIT260.FamilyTrials2.exceptions.MapControlException;
 import BYUI.CIT260.Family_Trials_2.model.Game;
 import BYUI.CIT260.Family_Trials_2.model.Inventory;
 import BYUI.CIT260.Family_Trials_2.model.Map;
@@ -36,7 +37,7 @@ public class GameControl {
                 return player;
     }
     
-    public static void createNewGame(Player player) throws GameControlException{
+    public static void createNewGame(Player player) throws GameControlException, MapControlException{
           /**public static int createNewGame(Player player) {
 if (player == null)
 return -1
