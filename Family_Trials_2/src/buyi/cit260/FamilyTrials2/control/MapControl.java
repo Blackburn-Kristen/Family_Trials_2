@@ -310,14 +310,30 @@ private static void assignQuestionToLocations(Questions[] questions,Location[][]
  return newLocation
 */
 
-/*public static Location MoveVehicle(Vehicle vehicle, int newRow, int newColumn) throws MapControlException{
+public static Location MoveVehicle(Vehicle vehicle, int newRow, int newCol) throws MapControlException{
     
-    if(vehicle = null){
+    if(vehicle == null){
         throw new MapControlException("Invalid Vehicle");
     }
 
-    Family_Trials_2 game = new getCurrentGame(); */
+    Game familyTrials2 = getCurrentGame(); 
 
+    Map map = familyTrials2.getMap();
     
+    if (newRow < 1 || newRow > map.getRowCount() || newCol < 1 || newCol > map.getColumnCount()){
+        throw new MapControlException("Invalid map size");
+    }
+    
+    int currentRow = map.getCurrentRow();
+    int currentCol = map.getCurrentColumn();
+    Location[][] location = map.getLocation();
+    location[currentRow][currentCol].setVehicle(null);
+    
+    location[newRow][newCol].setVehicle(vehicle);
+    
+    map.setLocation(location);
+    
+    return location[currentRow][currentCol];
+    }
 }
    

@@ -22,7 +22,17 @@ public class Location implements Serializable {
     private double touristTrap;
     private Scenes scene = null;
     private Questions question = null;
+    private Vehicle vehicle = null;
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+    
+    
     public Questions getQuestion() {
         return question;
     }

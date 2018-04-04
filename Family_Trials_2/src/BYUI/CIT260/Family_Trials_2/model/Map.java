@@ -17,10 +17,10 @@ public class Map implements Serializable {
     
     // class instances
     private String description;
-    private double rowCount;
-    private double columnCount;
-    private double currentRow;
-    private double currentColumn;
+    private int rowCount;
+    private int columnCount;
+    private int currentRow;
+    private int currentColumn;
     private Location[][] locations;
 
     /**
@@ -51,35 +51,35 @@ public class Map implements Serializable {
         this.description = description;
     }
 
-    public double getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public double getColumnCount() {
+    public int getColumnCount() {
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 
-    public double getCurrentRow() {
+    public int getCurrentRow() {
         return currentRow;
     }
 
-    public void setCurrentRow(double currentRow) {
+    public void setCurrentRow(int currentRow) {
         this.currentRow = currentRow;
     }
 
-    public double getCurrentColumn() {
+    public int getCurrentColumn() {
         return currentColumn;
     }
 
-    public void setCurrentColumn(double currentColumn) {
+    public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
 
