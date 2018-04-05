@@ -37,7 +37,7 @@ public class CarPartsMenuView extends View {
             case 'X':
                 return true;
             default:
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),"Invalid menu item.");
                 return false;
         }
         return false;
@@ -49,11 +49,11 @@ public class CarPartsMenuView extends View {
     }
 
     private void getCoolant() {
-        System.out.println("getCoolant() called");
+        ErrorView.display(this.getClass().getName(),"getCoolant() called");
     }
 
     private void getSpareTire() {
-        System.out.println("getSpareTire() called");
+        ErrorView.display(this.getClass().getName(),"getSpareTire() called");
     }
     }
 

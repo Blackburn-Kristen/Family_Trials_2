@@ -15,7 +15,7 @@ public class GameMenuView {
     }
     
     public void displayGameMenuView(){
-        System.out.println("displayGameMenuView() called.");
+       ErrorView.display(this.getClass().getName(),"displayGameMenuView() called.");
     }
     
 }

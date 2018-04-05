@@ -5,6 +5,9 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 
+import family_trials_2.Family_Trials_2;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = Family_Trials_2.getInFile();
+    protected final PrintWriter console = Family_Trials_2.getOutFile();
     
     public View(){
     }
@@ -26,6 +32,7 @@ public abstract class View implements ViewInterface {
     public void display(){
          boolean done = false;
         do{
+            this.console.println(displayMessage);
            String value = this.getInput();
            
            if(value.toUpperCase().equals("Q")){
@@ -40,24 +47,27 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput(){
         
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
-        String value = null;
-      
+        String selection = null;
+        try{
+            
         while(!valid){
-      System.out.println("\n" + this.displayMessage);
-      
-      value = keyboard.nextLine();
-      value = value.trim();
-      
-          if(value.length() < 1 ){
-              System.out.println("You must enter a value");
+            
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
+            
+            if(selection.length() < 1){
+              ErrorView.display(this.getClass().getName(),"You must enter a value");
               continue;
           }
           
           break;
     }
+        }
+        catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
+        }
     
-    return value;
+    return selection;
 }
 }

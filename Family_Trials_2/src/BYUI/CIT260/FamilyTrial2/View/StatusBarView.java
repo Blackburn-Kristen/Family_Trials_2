@@ -37,22 +37,22 @@ public class StatusBarView extends View{
             case 'X':
                 return true;
             default:
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),"Invalid menu item.");
                 return false;
         }
         return false;
           }
 
     private void showCarHealth() {
-        System.out.println("showCarHealth() called");
+        this.console.println("showCarHealth() called");
     }
 
     private void showHappiness() {
-        System.out.println("showHappiness() called");
+       this.console.println("showHappiness() called");
     }
 
     private void showTime() {
-        System.out.println("showTime() called");
+        this.console.println("showTime() called");
     }
 
 

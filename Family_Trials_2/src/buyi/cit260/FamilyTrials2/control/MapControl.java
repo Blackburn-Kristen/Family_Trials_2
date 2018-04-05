@@ -56,10 +56,10 @@ public class MapControl {
                map.setLocation(locations);
                
                Scenes[] scenes;
-               scenes = new Scenes[30];
+               scenes = new Scenes[27];
                scenes = createScenes();
                Questions[] questions;
-               questions = new Questions[29];
+               questions = new Questions[25];
                questions = createQuestions();
                
                assignScenesToLocations(scenes, locations);

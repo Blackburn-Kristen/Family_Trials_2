@@ -51,7 +51,7 @@ public class MainMenuView extends View {
             case 'E':
                 return true;
             default:
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),"Invalid menu item.");
                 return false;
         }
         return false;
@@ -60,15 +60,14 @@ public class MainMenuView extends View {
         
         private void startNewGame() throws MapControlException{
             
-            System.out.println("startNewGame called");
+       
             
        
         try {
-            GameControl.createNewGame(Family_Trials_2.getPlayer());
+         GameControl.createNewGame(Family_Trials_2.getPlayer());
         } catch (GameControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error starting new game: " + ex.getMessage());
         }
-           System.out.println("createNewGame called");
           
         Inventory[] createItems = GameControl.createItems();
        

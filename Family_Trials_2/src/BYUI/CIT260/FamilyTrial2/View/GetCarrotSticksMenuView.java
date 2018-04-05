@@ -46,14 +46,14 @@ public class GetCarrotSticksMenuView extends View{
             case '0':
                 return true;
             default:
-                System.out.println("Invalid amount you can only purchase a maximum of 5 bags of Carrot Sticks.");
+                ErrorView.display(this.getClass().getName(),"Invalid amount you can only purchase a maximum of 5 bags of Carrot Sticks.");
                 return false;
         }
         return false;
           }
     
      private void addCarrotSticksToInventory(){
-    System.out.println("addCarrotSticksToInventory() called");
+   ErrorView.display(this.getClass().getName(),"addCarrotSticksToInventory() called");
     }
 
     

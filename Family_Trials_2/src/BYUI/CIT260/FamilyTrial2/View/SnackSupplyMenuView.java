@@ -48,7 +48,7 @@ public class SnackSupplyMenuView extends View{
                 quit();
                 return true;
             default:
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),"Invalid menu item.");
                 return false;
         }
         return false;
@@ -60,27 +60,27 @@ public class SnackSupplyMenuView extends View{
     }
 
     private void appleSlices() {
-        System.out.println("appleSlices() Called");
+        ErrorView.display(this.getClass().getName(),"appleSlices() Called");
     }
 
     private void water() {
-        System.out.println("water() Called");
+        ErrorView.display(this.getClass().getName(),"water() Called");
     }
 
     private void candyBar() {
-       System.out.println("candyBar() Called");
+      ErrorView.display(this.getClass().getName(),"candyBar() Called");
     }
 
     private void Soda() {
-        System.out.println("soda() Called");
+        ErrorView.display(this.getClass().getName(),"soda() Called");
     }
 
     private void potatoChips() {
-        System.out.println("potatoChips() Called");
+        ErrorView.display(this.getClass().getName(),"potatoChips() Called");
     }
 
     private void quit() {
-        System.out.println("quit() Called");
+       ErrorView.display(this.getClass().getName(),"quit() Called");
     }
 
     

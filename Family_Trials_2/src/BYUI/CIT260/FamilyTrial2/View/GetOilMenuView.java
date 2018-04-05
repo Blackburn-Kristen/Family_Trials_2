@@ -31,14 +31,14 @@ public class GetOilMenuView extends View{
             case '0':
                 return true;
             default:
-                System.out.println("Invalid amount you can only purchase a maximum of 2 containers of oil");
+                ErrorView.display(this.getClass().getName(),"Invalid amount you can only purchase a maximum of 2 containers of oil");
                 return false;
         }
         return false;
           }
     
      private void addOilToInventory(){
-    System.out.println("addOilToInventory() called");
+    ErrorView.display(this.getClass().getName(),"addOilToInventory() called");
 }
 }
 

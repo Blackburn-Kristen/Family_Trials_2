@@ -18,14 +18,14 @@ import java.util.logging.Logger;
  *
  * @author Katrina
  */
-public class StartProgramView {
+public class StartProgramView extends View{
 
     public StartProgramView() { 
     }
         
        public void displayStartProgramView(){
             
-        System.out.println("Welcome to family Trials: A Road Trip Adventure");
+       this.console.println("Welcome to family Trials: A Road Trip Adventure");
         
         boolean endOfView = false;
         do{
@@ -45,7 +45,7 @@ public class StartProgramView {
         
         String[] inputs = new String[1];
       
-      System.out.println("Please enter your user ID");
+      this.console.println("Please enter your user ID");
         
       boolean valid = false;
       
@@ -58,7 +58,7 @@ public class StartProgramView {
             playerName = inFile.nextLine();
           
           if(playerName.length() < 1 ){
-              System.out.println("You must enter a menu value");
+              ErrorView.display(this.getClass().getName(),"You must enter a menu value");
               continue;
           }
           
@@ -76,7 +76,7 @@ public class StartProgramView {
         try {
             player = GameControl.createNewPlayer(playerName);
         } catch (GameControlException ex) {
-           System.out.println(ex.getMessage());
+           ErrorView.display(this.getClass().getName(), "Error creating new player: " + ex.getMessage());
            return false;
         }
           
@@ -84,10 +84,10 @@ public class StartProgramView {
         
         Family_Trials_2.setPlayer(player);
         
-        System.out.println("==================================================");
-        System.out.println("Welcome to the game" + Arrays.toString(playerName));
-        System.out.println("We hope you have a lot of fun!");
-        System.out.println("==================================================");
+        this.console.println("==================================================");
+        this.console.println("Welcome to the game" + Arrays.toString(playerName));
+        this.console.println("We hope you have a lot of fun!");
+        this.console.println("==================================================");
         
 
         MainMenuView mainMenuView = new MainMenuView() {};
@@ -95,5 +95,10 @@ public class StartProgramView {
         
         return true;
         }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

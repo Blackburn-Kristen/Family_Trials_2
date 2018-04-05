@@ -39,7 +39,7 @@ class HelpMenuView extends View{
             case 'X':
                 return true;
             default:
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),"Invalid menu item.");
                 return false;
         }
         return false;
@@ -51,7 +51,7 @@ class HelpMenuView extends View{
     }
 
     private void howToMove() {
-        System.out.println("howToMove() Called");
+        ErrorView.display(this.getClass().getName(),"howToMove() Called");
     }
 
     private void showStatusBar() {

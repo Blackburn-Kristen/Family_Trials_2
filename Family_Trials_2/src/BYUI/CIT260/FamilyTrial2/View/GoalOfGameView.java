@@ -15,7 +15,7 @@ public class GoalOfGameView {
     }
     
     public void displayGoalOfGameView(){
-        System.out.println("The goal of Family Trials is travel from 'Home' to"
+        ErrorView.display(this.getClass().getName(),"The goal of Family Trials is travel from 'Home' to"
                 + "'Grandma's House' without running out of money or letting any"
                 + "of the Status bars reach zero. Items can be bought in order to"
                 + "increase happiness and to help with car health.");
