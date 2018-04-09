@@ -78,6 +78,7 @@ public class Family_Trials_2 {
     }
 
     public static Game getCurrentGame() {
+        System.out.println("getCurrentGame called");
         return currentGame;
     }
 

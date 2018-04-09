@@ -69,7 +69,6 @@ public class MainMenuView extends View {
             ErrorView.display(this.getClass().getName(),"Error starting new game: " + ex.getMessage());
         }
           
-        Inventory[] createItems = GameControl.createItems();
        
     }
 

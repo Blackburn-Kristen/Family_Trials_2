@@ -43,7 +43,6 @@ public class GameControl {
             
             throw new GameControlException("Invalid Character Name,");
             }
-    
         Game game = new Game();
         game.setPlayer(player);
         
@@ -68,4 +67,8 @@ public class GameControl {
         
     }
     
+    public static void saveGame(Game game, String filePath) throws GameControlException{
+        
+        System.out.println("saveGame called");
+    }
 }

@@ -5,6 +5,11 @@
  */
 package BYUI.CIT260.FamilyTrial2.View;
 
+import BYUI.CIT260.FamilyTrials2.exceptions.GameControlException;
+import BYUI.CIT260.Family_Trials_2.model.Game;
+import static buyi.cit260.FamilyTrials2.control.GameControl.saveGame;
+import static family_trials_2.Family_Trials_2.getCurrentGame;
+
 /**
  *
  * @author Katrina
@@ -20,17 +25,32 @@ public class SaveGameView extends View{
 
   private String[] getInputs(){
       
-      String[] inputs = new String[1];
+      String[] input = new String[1];
+      this.console.println("Type the path you want to save your game in.");
+      input[0] = getInput();
       
-      input[1] = getInputs(message)
-      
+      return input;
   }
     
     
 
     @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(String filePath) {
+       Game game = getCurrentGame();
+       
+       try{
+           saveGame(game, filePath);
+       }
+       catch (GameControlException ex){
+           this.console.println("Error saving game" + ex.getMessage());
+           return false;
+       }
+       
+       this.console.println("File saves successfully in file: " + filePath );
+       return true;
     }
+    
+    
+
     
 }
