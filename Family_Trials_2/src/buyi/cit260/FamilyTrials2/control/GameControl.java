@@ -71,4 +71,11 @@ public class GameControl {
         
         System.out.println("saveGame called");
     }
+    
+    public static void restartGame(String filePath) throws GameControlException{
+        
+        System.out.println("saveGame called");
+        
+    }
+    
 }

@@ -72,7 +72,7 @@ public class MainMenuView extends View {
        
     }
 
-    private void restartGame() {
+    void restartGame() {
         
         StartExistingGameView startExistingGameView = new StartExistingGameView();
          startExistingGameView.displayStartExistingGameView();
