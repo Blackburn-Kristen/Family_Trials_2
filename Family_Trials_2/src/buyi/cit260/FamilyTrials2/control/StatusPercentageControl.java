@@ -64,7 +64,8 @@ public class StatusPercentageControl {
         
     }
     
-    public float calcCarHealth(float spareTire, float coolant, float oil, float randomEvents, float locationStart, float locationCurrent, float locationEvents, float carSpeed, float statusPercentage) throws StatusPercentControlException{
+    public float calcCarHealth(float spareTire, float coolant, float oil, float randomEvents, float locationStart, float locationCurrent, 
+            float locationEvents, float carSpeed, float statusPercentage) throws StatusPercentControlException {
         
         if (spareTire != 0 && spareTire != 1){
             throw new StatusPercentControlException("Invalid number of spare tires");

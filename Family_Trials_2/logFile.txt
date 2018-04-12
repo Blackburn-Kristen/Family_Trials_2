@@ -1,0 +1,5 @@
+
+
+BYUI.CIT260.FamilyTrial2.View.GoalOfGameView-The goal of Family Trials is travel from 'Home' to'Grandma's House' without running out of money or letting anyof the Status bars reach zero. Items can be bought in order toincrease happiness and to help with car health.
+
+BYUI.CIT260.FamilyTrial2.View.SnackSupplyMenuView-quit() Called

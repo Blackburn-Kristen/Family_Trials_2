@@ -13,6 +13,12 @@ import java.util.ArrayList;
  * @author krist
  */
 public class CarParts implements Serializable{
+
+   
+
+    public void setVehicle(ArrayList<Vehicle> vehicle) {
+        this.vehicle = vehicle;
+    }
     
     // class instance variables
     private double spareTire;
@@ -23,7 +29,9 @@ public class CarParts implements Serializable{
     public CarParts() {
     }
     
-    
+     public ArrayList<Vehicle> getVehicle() {
+        return vehicle;
+    }    
 
     public double getSpareTire() {
         return spareTire;
